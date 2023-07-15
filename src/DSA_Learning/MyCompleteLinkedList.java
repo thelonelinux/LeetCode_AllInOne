@@ -157,14 +157,46 @@ public class MyCompleteLinkedList {
     }
 
 
+    /**\Method 5 : deleteAt(int index) //Delete node at given index */
+    public void  deleteAt(int index){
+        if(index==0){
+            //means you want to delete the first node of linkedlist/head
+            //so why not move our head forward to second node and head starts from second node only
+            head=head.next;
+        }
+        else {
+            Node tempHeadTraversal = head;
+            System.out.println(tempHeadTraversal.data);
+
+            for(int i=0;i<index-1;i++){ //Example in 1=>2=>3=>4=>5 You want to delete index=2, i.e 3 from linkedlist
+                //so this loop will travers only 0 (at second Node)  and 1 (at third Node)
+                //so after we come out, we need to store this third node afterwards linkedlist in new node
+                //and in our traversal's next node only add next of third node
+                tempHeadTraversal=tempHeadTraversal.next;
+                System.out.println(tempHeadTraversal.data);
+
+            }
+
+            Node storeIndexedNode=tempHeadTraversal.next; //Here this will store 4=>5
+            int valueDeleted=tempHeadTraversal.next.data;
+            //Now in our tempHeadTraversal's next put the next of sotreIndexedNode
+            tempHeadTraversal.next=storeIndexedNode.next;
+
+            System.out.println("Index taken from 0 : Deleted Node is "+"from index : "+index+" =>" + valueDeleted);
+
+
+        }
+    }
+
     public static void main(String[] args) {
         MyCompleteLinkedList linkedList = new MyCompleteLinkedList(); //This will initialize head node inside only
         linkedList.add(2); //this will add new node to our head node
-        linkedList.add(4);
+        linkedList.add(4);linkedList.add(6);linkedList.add(8);linkedList.add(10);linkedList.add(12);
         linkedList.add(6); linkedList.show();
-        linkedList.insertAtStart(1); linkedList.show();
-        linkedList.insertAt(3,5); linkedList.show();
-        linkedList.insertAt(6,10);
+//        linkedList.insertAtStart(1); linkedList.show();
+//        linkedList.insertAt(3,5); linkedList.show();
+//        linkedList.insertAt(6,10);
+        linkedList.deleteAt(3);
 
         linkedList.show();
 
