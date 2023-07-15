@@ -10,7 +10,10 @@ public class MyLinkedList {
      * Remember Head Node is a node only. Inside we will attach more nodes just this.
      */
 
-    public  Node head;
+    public  Node head;  //Don't make this static, else it will become class property and will not be reinitialised when you create new linkedList
+    //object. so.
+    //This is starting node of our linkedList. It should be always pointing to first node address of our linkedList
+    //So while traversing this head node, always use temporary node to traverse this linkedList
 
     public class Node{  //Node class will have two data members, namely Node and data, It's like node inside node.
         int data;
