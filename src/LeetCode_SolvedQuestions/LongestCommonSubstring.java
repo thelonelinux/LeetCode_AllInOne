@@ -1,3 +1,5 @@
+package LeetCode_SolvedQuestions;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -5,7 +7,7 @@ public class LongestCommonSubstring {
 
     public static  String longestCommonSubstring(String[] strs) {
 
-        //Here we have done code for LongestCommonSubstring and it is different from longest common prefix. so check it.
+        //Here we have done code for LeetCode_SolvedQuestions.LongestCommonSubstring and it is different from longest common prefix. so check it.
 
         //Take out all possible substring list from first 2 strings
         //Now check this list of substrings if contains() in other strings. If present then return the one with longest, if none then return "" empty string

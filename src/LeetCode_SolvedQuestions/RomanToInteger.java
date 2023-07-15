@@ -1,3 +1,5 @@
+package LeetCode_SolvedQuestions;
+
 import java.util.HashMap;
 import java.util.Map;
 

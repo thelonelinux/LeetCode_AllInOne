@@ -1,3 +1,5 @@
+package LeetCode_SolvedQuestions;
+
 public class LongestCommonPrefix {
 
     //There are however better solutions in Leetcode, check there and compare how that is optimized.
