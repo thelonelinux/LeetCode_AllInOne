@@ -21,6 +21,9 @@ public class OverAllLearningAndTipsForBetterSolutionAndApproach {
     1. Use of stringBuilder is more space-saving and good for appending rather than string concatenation.
         Concatenation is more time-consuming in string than appending in stringBuilder.
 
+
+    2. Always start problem-solving by writing notes and code on paper, there you can always find optimized solutions : Always
+
  */
 
 }
