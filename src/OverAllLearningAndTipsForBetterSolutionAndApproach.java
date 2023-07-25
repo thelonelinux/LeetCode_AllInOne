@@ -24,6 +24,15 @@ public class OverAllLearningAndTipsForBetterSolutionAndApproach {
 
     2. Always start problem-solving by writing notes and code on paper, there you can always find optimized solutions : Always
 
+
+
+    3. if (num==element){
+            count+=1;   //This Saves more space than (count++ or Count=Count+1)
+        }
+      else{
+            count-=1;  //This save more space than (count-- or Count=Count-1)
+        }
+
  */
 
 }
