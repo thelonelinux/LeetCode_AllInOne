@@ -68,20 +68,61 @@ public class MyBasicBinarySearchTreeImplementation {
 
     }
 
+
     /**
-     * Method 2 : Traversals : Preorder Means (Parent or root on Pre side, before other)
-     * Hence Root => Left => Right (Left => Right this order remains constant in all traversal, it's just root gets located A/to Pre/Post)
+     * Method 2 : Traversals : InOrder Means (Parent or root on Pre side, before other)
+     * Hence [Left => Root =>  Right ] (Left => Right this order remains constant in all traversal, it's just root gets located A/to Pre/Post)
+     */
+
+    public void inOrder(Node root){
+        if(root == null){
+            return;//This works for two condition, first when root is null, next when we are going traversing say
+            //in left and left node of inner recursion, whenever we reach at the node whose root.left is null
+            //or whose parent has no left leaf then this gets return and go back to next step of Syso and print that
+            //so you can see below this is how it keeps on going in. So this concept of return you understand now
+            //5*** Understanding
+            //So for now this much only understand, rest deep diving recursion is required totally
+        }
+        preOrder(root.left);
+        System.out.println(root.data);
+        preOrder(root.right);
+    }
+
+
+
+
+    /**
+     * Method 3 : Traversals : Preorder Means (Parent or root on Pre side, before other)
+     * Hence [Root => Left => Right] (Left => Right this order remains constant in all traversal, it's just root gets located A/to Pre/Post)
      */
 
     public void preOrder(Node root){
-        //First print the root
-        if(root!=null){
-            System.out.println(root.data);
+        if(root == null){
+            return; //This works for two condition, first when root is null, next when we are going traversing say
+            //in left and left node of inner recursion, whenever we reach at the node whose root.left is null
+            //or whose parent has no left leaf then this gets return and go back
         }
-
-        //Now go to left Node recursively
-        preOrder(root.left); //If we are at end when
-
-
+        System.out.println(root.data);
+        preOrder(root.left);
+        preOrder(root.right);
     }
+
+
+
+    /**
+     * Method 4 : Traversals : PostOrder Means (Parent or root on Pre side, before other)
+     * Hence [Left => Right => Root] (Left => Right this order remains constant in all traversal, it's just root gets located A/to Pre/Post)
+     */
+
+    public void postOrder(Node root){
+        if(root == null){
+            return;
+        }
+        preOrder(root.left);
+        preOrder(root.right);
+        System.out.println(root.data);
+    }
+
+
+
 }
