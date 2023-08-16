@@ -80,7 +80,7 @@ public class MyBasicBinarySearchTreeImplementation {
             //in left and left node of inner recursion, whenever we reach at the node whose root.left is null
             //or whose parent has no left leaf then this gets return and go back to next step of Syso and print that
             //so you can see below this is how it keeps on going in. So this concept of return you understand now
-            //5*** Understanding
+            //5*** Understanding (Plus also you see that image in the notebook, of how you have explained yourself)
             //So for now this much only understand, rest deep diving recursion is required totally
         }
         preOrder(root.left);
