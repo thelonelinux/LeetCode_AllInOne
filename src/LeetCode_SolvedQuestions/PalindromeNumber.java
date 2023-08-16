@@ -1,3 +1,5 @@
+package LeetCode_SolvedQuestions;
+
 public class PalindromeNumber {
 
     public static boolean isPalindrome(int x) {

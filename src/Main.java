@@ -1,31 +1,46 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.*;
+
+
 public class Main {
 
-    public static boolean isPalindrome(int x) {
-        Integer integer=x;
-        String str= new String(integer.toString());
+    public static int strStr(String haystack, String needle) {
 
-        if(str.contains("-")){
-            return false;
+        if(haystack.equals(needle)){
+            return 0;
         }
-        if(str.length()==1){
-            return true;
-        }
+        int index=-1;
 
-        for (int i=0 ;i<str.length() ;i++) {
-            if(str.charAt(i)==str.charAt(str.length()-i-1)){
-                //Ok
-            }else{
-                return false;
+        for(int i=0;i<haystack.length()-needle.length()+1;i++){
+            if (haystack.charAt(i)==needle.charAt(0)){
+                int j=i+1;
+                index=i;
+                for(int a=1 ; a<needle.length();a++){
+                    if(haystack.charAt(j++)==needle.charAt(a)){
+                        if(a==needle.length()-1){
+                            index=i;
+                            return index;
+
+                        }
+                    }
+                }
             }
         }
-        return true;
+        return index;
+
     }
 
     public static void main(String[] args) {
-        int x=121;
-        System.out.println(isPalindrome(x));
+
+        String haystack = "abc";
+        String needle = "c";
+
+        System.out.println(strStr(haystack, needle));
 
     }
+
 }
+
+
+
+
+
