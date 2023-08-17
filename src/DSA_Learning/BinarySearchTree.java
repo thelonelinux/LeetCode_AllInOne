@@ -229,7 +229,7 @@ public class BinarySearchTree {
      */
     public int findHeight(Node root){
         if(root == null){
-            return 0; //Doing in a same recursion ways as you can see in inOrder Traversal
+            return 0; //Doing in a same recursion ways as you can see in inOrder Traversal, zero is returned when reached end null
         }
 
         //Just go recursively inside of that left and right child and ask them to give there height + 1.
