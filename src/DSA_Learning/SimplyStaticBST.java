@@ -51,7 +51,7 @@ public class SimplyStaticBST {
         return root;
     }
 
-    /**  * Method 2 : Traversals : InOrder Means (Parent or root on Pre side, before other),Hence [Left => Root =>  Right ] */
+    /**  * Method 2 : Traversals : InOrder Means  [Left => Root =>  Right ] */
     public static void inOrder(Node root){
         if(root == null){
             return;
@@ -61,7 +61,7 @@ public class SimplyStaticBST {
         inOrder(root.right);
     }
 
-    /** * Method 3 : Traversals : Preorder Means (Parent or root on Pre side, before other), Hence [Root => Left => Right] */
+    /** * Method 3 : Traversals : Preorder Means  [Root => Left => Right] */
     public static void preOrder(Node root){
         if(root == null){
             return;
@@ -71,7 +71,7 @@ public class SimplyStaticBST {
         preOrder(root.right);
     }
 
-    /** Method 4 : Traversals : PostOrder Means (Parent or root on Pre side, before other) Hence [Left => Right => Root] */
+    /** Method 4 : Traversals : PostOrder Means  [Left => Right => Root] */
     public static void postOrder(Node root){
         if(root == null){
             return;
@@ -81,10 +81,57 @@ public class SimplyStaticBST {
         System.out.print(root.data + " ");
     }
 
+    /** Method 5 : Delete a node from Tree
+     * Three cases=> 1. when node has no child, 2. when the node has one child, 3. when node has two child      */
+    public static Node delete(Node root, int val){
+        if(val > root.data){
+           root.right=delete(root.right, val);
+        }
+        else if(val < root.data){
+            root.left=delete(root.left, val);
+        }
+        else{
+            if(root.left == null || root.right == null){
+                Node temp = null;
+                temp = root.left == null ? root.right: root.left;
+                if(temp == null){
+                    return null;
+                }
+                else{
+                    return temp;
+                }
+            }
+            else{
+                Node successor = getSuccessor(root);
+                root.data=successor.data;
+                root.right=delete(root.right, successor.data);
+                return root;
+            }
+        }
+        return root;
+    }
+
+    //getSuccessor method     //Get the least from right sub tree of node that we are going to delete
+    public static Node getSuccessor(Node root){
+        if(root == null){
+            return null;
+        }
+        //Let's check on right subtree and get the min value
+        Node temp=root.right;
+        while(temp.left != null){
+            //Go in left of left until a null value is found, and get that node, as that will be our successor
+            temp=temp.left;
+        }
+        return temp;
+    }
+
     //Driver Code
     public static void main(String[] args) {
         int[] keys = {15,10,20,8,12,16,25}; //{5,3,4,2,1,9,10,7,6,8};
         Node root =  constructBST(keys);
+        inOrder(root);
+        delete(root, 12);
+        System.out.println();
         inOrder(root);
     }
 

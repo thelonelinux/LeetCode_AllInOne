@@ -131,6 +131,97 @@ public class BinarySearchTree {
     }
 
 
+    /**
+     * Method 5 : Delete a node from Tree
+     * Three cases=> 1. when node has no child, 2. when the node has one child, 3. when node has two child
+     */
+    public Node delete(Node  root, int val){
+        //val is node you are going to delete
+        //first let's search that val in our tree root. (we are not considering the case when that val is not present in our tree
+        if(val > root.data){
+            //go in right subtree and ask it to check in yourself recursively and get the result
+            root.right=delete(root.right, val);
+        }
+        else if(val < root.data){
+            //go in left subtree and ask it to check in yourself recursively and get the result
+            root.left=delete(root.left, val);
+        }
+        else{ //Case when we found that val i.e. (if(val==root.data))
+
+            //Case when the node has either zero or one node
+            if(root.left == null || root.right == null){
+                //create a temp node to be used for this case
+
+                //initially put null value
+                Node temp = null;
+                //assign root's left or root's right to this temp node in case that node we are going to delete has one child
+                temp = root.left == null ? root.right: root.left;
+                //this is ternary operator, saying if left is null then put right or vice versa
+
+                if(temp == null){ //means the child we are goign to delete has no child in it, so it is null
+                    //and can't be assigned in above ternary operator and only has null value.
+                    //so to delete this node, just return null instead of that node, then that node gets automatically deleted
+                    return null;
+                }
+                else{
+                    //case we have one child, then that child can be replaced for that deleted node at end
+                    //hence just return the temp node where we have stored that child
+                    return temp;
+                }
+            }
+            //Case when the node has two child
+            else{
+                //Case when the node we are going to delete has two child in it
+                //we can resolve this in two ways
+                //1. Replace that node with max value of left sub tree or (Just go in right of right end to get that)
+                //2. Replace that node with min value of right sub tree (Just go in left of left only to get that)
+                //But also before replacing we need to store that left or right sub tree parent
+
+                //So to do this task, better we create a new method separately
+                //Step 1 : getSuccessor method =>  Get the min val node from right sub-tree of node that we are going to delete
+                Node successor = getSuccessor(root);
+
+                //Step 2 :
+                //So now we got our successor node which will replace our node which we are going to delete
+                //So this just means that why not we just change the value of node which we are going to delete with the
+                //successor node's value, Hence
+                root.data=successor.data; //So new value is assigned to our supposed to be deleted node and hence it is deleted
+                //or seems to be deleted as we have changed it's value
+
+                //Step 3:
+                //So now we have updated our node, then we might want to delete that value present in right subtree of our node
+                //that successors node value, as we have used in assigning to our suppose to be deleted node
+                //so
+                root.right=delete(root.right, successor.data); //so go in right sub tree and just delete it
+                //when deleting this successor from right sub-tree then it will only have either one or no child, but never two child
+
+                //Step 4:
+                //Now just return the root, as we have updated everything, everywhere in right sub-tree also and in it's node also
+                return root;
+
+            }
+
+        }
+        return root;
+    }
+
+    //getSuccessor method
+    //Get the least from right sub tree of node that we are going to delete
+    public Node getSuccessor(Node root){
+        if(root == null){
+            return null; //this is very much not possible to get null in that root node for which we are tyring to get min
+            //as we are here only because our node has two child and we want to get successor to replace our node
+        }
+        //Let's check on right subtree and get the min value
+        Node temp=root.right;
+
+        while(temp.left != null){
+            //Go in left of left until a null value is found, and get that node, as that will be our successor
+            temp=temp.left;
+        }
+        return temp;
+    }
+
 
 
     //Driver Code
@@ -139,6 +230,9 @@ public class BinarySearchTree {
         BinarySearchTree bst = new BinarySearchTree();
         int[] keys = {15,10,20,8,12,16,25}; //{5,3,4,2,1,9,10,7,6,8};
         Node rootStandAlone =  bst.constructBST(keys);
+        bst.inOrder(rootStandAlone);
+        bst.delete(rootStandAlone, 12);
+        System.out.println();
         bst.inOrder(rootStandAlone);
 
         //Other way is create the class object and use its root and methods and nodes.
