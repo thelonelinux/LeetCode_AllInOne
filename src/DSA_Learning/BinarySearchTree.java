@@ -5,7 +5,7 @@ package DSA_Learning;
  * We can max two child node of a parent node
  */
 
-public class MyBasicBinarySearchTreeImplementation {
+public class BinarySearchTree {
 
     //Some components of BinarySearchTree, we need this component to build BST
     //1. Node Class (Object), which we will add together to make Binary Search Tree
@@ -39,11 +39,12 @@ public class MyBasicBinarySearchTreeImplementation {
     public Node insert(Node root, int data){
         //Like linkedList we don't need here traversal, just pass the left or right, they will update
         //themselves in recursive call in deep down, whenever they find null.
-        Node newNode=new Node(data, null, null );
+        //Node newNode=new Node(data, null, null );
 
         if(root==null){
             //Means we don't have any node ready as root, as it is null, so lets put this new node only as our root
-            root=newNode;
+            return new Node(data, null, null );
+            //root=newNode;
         }
 
         //Now if root node is not null, then there is value there already so let's go deep down,
@@ -70,10 +71,21 @@ public class MyBasicBinarySearchTreeImplementation {
 
 
     /**
+     * Method (Helper Method : Just to Create our Binary Search Tree when we pass an array of integer values
+     */
+    public Node constructBST(int[] keys){
+        Node root = null;
+        for(int key : keys){
+            root=insert(root, key);
+        }
+        return root;
+    }
+
+
+    /**
      * Method 2 : Traversals : InOrder Means (Parent or root on Pre side, before other)
      * Hence [Left => Root =>  Right ] (Left => Right this order remains constant in all traversal, it's just root gets located A/to Pre/Post)
      */
-
     public void inOrder(Node root){
         if(root == null){
             return;//This works for two condition, first when root is null, next when we are going traversing say
@@ -83,44 +95,65 @@ public class MyBasicBinarySearchTreeImplementation {
             //5*** Understanding (Plus also you see that image in the notebook, of how you have explained yourself)
             //So for now this much only understand, rest deep diving recursion is required totally
         }
-        preOrder(root.left);
-        System.out.println(root.data);
-        preOrder(root.right);
+        inOrder(root.left);
+        System.out.print(root.data + " ");
+        inOrder(root.right);
     }
-
-
 
 
     /**
      * Method 3 : Traversals : Preorder Means (Parent or root on Pre side, before other)
      * Hence [Root => Left => Right] (Left => Right this order remains constant in all traversal, it's just root gets located A/to Pre/Post)
      */
-
     public void preOrder(Node root){
         if(root == null){
             return; //This works for two condition, first when root is null, next when we are going traversing say
             //in left and left node of inner recursion, whenever we reach at the node whose root.left is null
             //or whose parent has no left leaf then this gets return and go back
         }
-        System.out.println(root.data);
+        System.out.print(root.data + " ");
         preOrder(root.left);
         preOrder(root.right);
     }
-
 
 
     /**
      * Method 4 : Traversals : PostOrder Means (Parent or root on Pre side, before other)
      * Hence [Left => Right => Root] (Left => Right this order remains constant in all traversal, it's just root gets located A/to Pre/Post)
      */
-
     public void postOrder(Node root){
         if(root == null){
             return;
         }
-        preOrder(root.left);
-        preOrder(root.right);
-        System.out.println(root.data);
+        postOrder(root.left);
+        postOrder(root.right);
+        System.out.print(root.data + " ");
+    }
+
+
+
+
+    //Driver Code
+    public static void main(String[] args) {
+        //So you can do this in two ways to check root and etc, one is jsut create root node and use the methods
+        BinarySearchTree bst = new BinarySearchTree();
+        int[] keys = {15,10,20,8,12,16,25}; //{5,3,4,2,1,9,10,7,6,8};
+        Node rootStandAlone =  bst.constructBST(keys);
+        bst.inOrder(rootStandAlone);
+
+        //Other way is create the class object and use its root and methods and nodes.
+        BinarySearchTree bst2 = new BinarySearchTree();
+        bst2.root=bst2.insert(bst2.root, 8);
+        bst2.root=bst2.insert(bst2.root, 3);
+        bst2.root=bst2.insert(bst2.root, 1);
+        bst2.root=bst2.insert(bst2.root, 6);
+        bst2.root=bst2.insert(bst2.root, 4);
+        bst2.root=bst2.insert(bst2.root, 7);
+        bst2.root=bst2.insert(bst2.root, 10);
+        bst2.root=bst2.insert(bst2.root, 14);
+        bst2.root=bst2.insert(bst2.root, 13);
+        System.out.println();
+        bst2.inOrder(bst2.root);
     }
 
 
