@@ -125,6 +125,42 @@ public class SimplyStaticBST {
         return temp;
     }
 
+
+    /**      * Method 6 : Height of a tree
+     * This method will work for both Binary Tree and Binary Search Tree ( As it is irrespective of value stored in nodes)    */
+    public static int findHeight(Node root){
+        if(root == null){
+            return 0; //Doing in a same recursion ways as you can see in inOrder Traversal
+        }
+
+        //Just go recursively inside of that left and right child and ask them to give there height + 1.
+        //plus 1 gets accumulated and at end we will get overall height
+        return Math.max(findHeight(root.left), findHeight(root.right)) + 1;
+    }
+
+    /**    * Method 7 : Depth of a tree (Same as height, but here you can also pass any random node instead of root node also
+     * This method will work for both Binary Tree and Binary Search Tree ( As it is irrespective of value stored in nodes)    */
+    public static int maxDepth(Node root){
+        if(root == null){
+            return 0; //Doing in a same recursion ways as you can see in inOrder Traversal
+        }
+        else{
+            //Output the depth of each subtree separately recursively as you know from inorder Traversal how it works
+            int leftDepth=maxDepth(root.left);
+            int rightDepth=maxDepth(root.right);
+
+            //Use the larger one of the above returned height value
+            if(leftDepth > rightDepth){
+                return (leftDepth+1);
+            }else{
+                return (rightDepth+1);
+            }
+
+        }
+
+
+    }
+
     //Driver Code
     public static void main(String[] args) {
         int[] keys = {15,10,20,8,12,16,25}; //{5,3,4,2,1,9,10,7,6,8};
@@ -132,7 +168,11 @@ public class SimplyStaticBST {
         inOrder(root);
         delete(root, 12);
         System.out.println();
+        System.out.println("element deleted => 12");
         inOrder(root);
+        System.out.println();
+        System.out.println("Height of the tree => " + findHeight(root));
+        System.out.println("Depth of the tree => " + maxDepth(root));
     }
 
 
