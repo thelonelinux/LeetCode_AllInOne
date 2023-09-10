@@ -98,6 +98,20 @@ public class Main_Java_Learning {
         System.out.printf("%.6f %n", d1/d2); //gives float value upto 6 decimal places //0.833333
         System.out.printf("%.10f %n", d1/d2); //gives float value upto 10 decimal places //0.8333333333
 
+
+        /**
+         * Building a staggered array, 2D array, but size of each array is not same
+         */
+        int[][] arr3 = new int[5][];
+        for (int x=0; x<arr3.length;x++){
+            arr3[x]=new int[x+1]; //size of first arr will be 1, size of second array will be 2 and so on upto 5
+        }
+
+        /** Arrays.Stream for fast printing the array. instead of using for loops etc */
+        int[] arr4= {1,2,3,4,5,6,7,8,9};
+        Arrays.stream(arr4).forEach(System.out::println); //but this will print in different line only, don't know how to do in one line
+
+
     }
 
 
