@@ -99,7 +99,7 @@
 * Later we can use that index, and just go diagonally opposite previous value until we get matching char to get the answers and hence done
 * Check the code,
 
-## All topics In DP Patterns
+## All topics In DP PatternszxxaX 
 𝐃𝐲𝐧𝐚𝐦𝐢𝐜 𝐏𝐫𝐨𝐠𝐫𝐚𝐦𝐦𝐢𝐧𝐠 𝐀𝐥𝐥 𝐏𝐚𝐭𝐭𝐞𝐫𝐧𝐬 𝐏𝐫𝐞𝐩𝐚𝐫𝐚𝐭𝐢𝐨𝐧 𝐁𝐬𝐭 🔥
 
 Pattern ->𝟏𝐃 𝐃𝐲𝐧𝐚𝐦𝐢𝐜 𝐏𝐫𝐨𝐠𝐫𝐚𝐦𝐦𝐢𝐧𝐠

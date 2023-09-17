@@ -1,4 +1,4 @@
-package DynamicProgramming_Learning;
+package DynamicProgramming_Learning.Using_2_Dimension_DP_Array;
 
 public class FloydWarshalAlgorith_ForGraphsDP {
 
