@@ -50,9 +50,10 @@
 
 
 
-## All these above mentioned problem can be solved in either of two ways of Dynamic Programming Approach
+## All these above-mentioned problem can be solved in either of two ways of Dynamic Programming Approach
+
 1. Top-Down Approach - Time Complexity O(N^2):
-* For me it is bit difficult to understand
+* For me, it is a bit difficult to understand
 
 2. Bottom-Up Approach - Time Complexity O(N^2):
 * Easy to understand and understand the pattern of sub-problem as discussed in above example only. you can see.
