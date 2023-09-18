@@ -124,6 +124,38 @@
     * min value which operations can give us min we will take that and add 1, as we used 1 operation as current operation or edit.
 
 
+#### 6. Subset Sum Problem
+* Problem Statement : Given a set of non-negative integers, and a value targetSum, determine if there is a subset of the given set
+* with sum equal to given targetSum.
+* Image is showing to check approach.
+* Put targetSum sum in rows and sets taken that much item in columns, as you can see in image added here in this project
+* Approach:
+* Base Case : Initially put all DP[i][j] as false, in java by default it will always be false.
+* Base Case 1 : (First row) : To get sum=0, given the sets as you can see in row{0} in image, so for that everything will be 'T'
+* true. i.e., DP[0][j]=true;
+* Base Case 2 : (First column) : To get sum 1 to 6, given we have empty set. so we can never reach there hence 'F' false
+* false. i.e., DP[i][0]=false;
+* Now let's populate our DP[][] in sub-problem way
+* so approach will be as
+* for(int sum=1; sum<=targetSum; summ++) //this is like taking the current sum, and trying to find it's answer by using sub-problems
+  * for(int j=1; j<set.length(); j++)
+    * //Pick only those values from subset which after being used don't give us negative remaining currentSum.
+    * //Means the subset value taken should be less than current sum
+    * //hence
+      * if(sum >= set[j-1]){ //j-1 becuase set is starting from zero index only, but here j is starting from 1 so
+        * //then only include and take value from set, if less than sum
+        * DP[sum][j] = DP[sum][j] || DP[sum-set[j-1]][j-1] //Very important, here (j-1) we are taking so that we make sure we don't use this element again,
+        * //as we have finite 1 of each value, unlike coins problem. so we go up in DP(sum-set taken)(j-1), j-1 means no need to take
+        * //this set value again, like if we have one 3 in set, and we need 6 as sum, then we can use 3 once, so going up in DP[6-3], we don't
+        * //want to use 3 again, so checking DP[][j-1], and not j, as if we had DP[][j], then we might involve in using 3 again.
+        * //see image, there it is best explaining
+      * else{
+      *  //if the subset sum is greater than sum, then just return what answer you've got till now in current DP[sum]
+      * // in its previous set until now (remember previous set, and not in previous sum)
+        * //hence
+        * DP[sum][j] = DP[sum][j-1]
+* At the end our answer is stored in DP[sum][n];
+
 
 
 ## All topics In DP Patterns
