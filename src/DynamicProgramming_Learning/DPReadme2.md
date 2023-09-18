@@ -99,7 +99,34 @@
 * Later we can use that index, and just go diagonally opposite previous value until we get matching char to get the answers and hence done
 * Check the code,
 
-## All topics In DP PatternszxxaX 
+#### Example 5 : Edit Distance (Similar like LCS, but bit difficult to explain)(But Understood)
+* Problem Statement : Given two strings str1 and str2 and operations like 1.Insert a char, 2.Remove a char, 3.Replace a char.
+* That can be performed on str1. Find minimum number of edits(operations) required to convert 'str1' into 'str2'
+* Example you can see in geeksforGeeks
+* Here also we have make use of 2-Dimensional Array to store the Sub-problem answers
+* Base Case : if str1 is empty string then edits is equal to number of string length of other str2, as we need that much items to add
+* similarly, if str2 is empty string then edits is equal to number of string length of str1, as we need that much items to delete.
+* Base Case code will be like : if(i == 0 || j==0) then dp[i][j]=i(when j==0) and dp[i][j]=j(when j==0). explained above why we are doing this
+* Most of you can see in images and understand the approach and edge cases, and why certain operations means addition, deletion or replace.
+* Ultimately we will be filling our DP[][] array like as below
+* for(int i = str1 to its length)
+  * for(int j = str2 to its length)
+    * if(str1.charAt(i) == str2.charAt(j))
+      * then just store the previous value as no new edits we have to do here. just what previous sub-problem is excluding current chars
+      * i.e., DP[i][j]=DP[i-1][j-1];//Just taking previous diagonal answer, as current chars has no edits meaning to consider
+    * else{
+    * //if the strings are not matching, then ask which 3 steps (add, remove, or replace) from previous sub-problem can be taken.
+    * i.e., DP[i][j] = Math.min(DP[i][j-1], DP[i-1][j], DP[i-1][j-1]) + 1; 
+    * Here technically seeing DP[i][i-1] => Denotes inserting a new value to str1,
+    * DP[i][j-1] => Denotes deleting a  value from str1,
+    * and DP[i-1][j-1] => Denotes replacing a value in str1.
+    * so this three operations are previously sub-problem, value and when we are trying to get from there to here, then we take
+    * min value which operations can give us min we will take that and add 1, as we used 1 operation as current operation or edit.
+
+
+
+
+## All topics In DP Patterns
 𝐃𝐲𝐧𝐚𝐦𝐢𝐜 𝐏𝐫𝐨𝐠𝐫𝐚𝐦𝐦𝐢𝐧𝐠 𝐀𝐥𝐥 𝐏𝐚𝐭𝐭𝐞𝐫𝐧𝐬 𝐏𝐫𝐞𝐩𝐚𝐫𝐚𝐭𝐢𝐨𝐧 𝐁𝐬𝐭 🔥
 
 Pattern ->𝟏𝐃 𝐃𝐲𝐧𝐚𝐦𝐢𝐜 𝐏𝐫𝐨𝐠𝐫𝐚𝐦𝐦𝐢𝐧𝐠
