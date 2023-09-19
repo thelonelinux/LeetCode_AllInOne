@@ -156,6 +156,16 @@
         * DP[sum][j] = DP[sum][j-1]
 * At the end our answer is stored in DP[sum][n];
 
+#### 6-A : Partition Problem (Application of Subset Sum Problem) (Can be done by using above subset technique only)
+* Problem Statement : Partition problem is to determine whether a given set can be partitined into two subsets such that the sum 
+* of elements in both subsets is the same.
+* Input[] arr = {1,5,11,5}, Output : true, the array can be {1,5,1} and {11}
+* Approach to solve this problem
+* two steps :
+* 1. Calculate sum of the array, if sum is odd, there can not be two subsets with equal sum, so return false.
+* 2. If sum of array elements is even, calculate sum/2=targetSum, and find a subset of array with sum equal to sum/2.
+* So this problem will exactly become like above subset sum problem, so this can be solved using DP as done above.
+
 
 
 ## All topics In DP Patterns
