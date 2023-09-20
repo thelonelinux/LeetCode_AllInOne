@@ -168,6 +168,63 @@
 
 
 
+
+#### 7 : 0/1 Knapsack Problem (Bit similar to coin change but not totally, as here we have finite item or one item of each type)
+* Problem Statement : Given Weights and values of n items in a knapsack of capacity W (TargetCapacity) to get maximum total value in the 
+* knapsack. In other words, given two integer arrays ItemWeight[]={1,2,3} and ItemValue[]={10,15,40}, which represents the weights
+* and values of each item respectively, find out the maximum value subset such that sume of the weights of this subset is smaller 
+* than or equal to W. You cannot break an item, either pich the complete item or don't pick it. (Hence called 0/1 property).
+* Approach : 
+* Putting sack weight (TotalCapacity) in row of DP[][] array, and given items set in column.
+* Rem! 5*** => Here repetition of same ites is not allowed once it is picked. Also no fraction use of item, either pick it whole or
+* don't pick it up at all.
+* Let input be like
+* Weight of Item => itemWeight[] = {1,  2,  3}
+* Value if Item =>  itemValue[] =  {10, 15, 40}. respectively, 
+* int totalItems = itemWeight.length; //Depicts upto jth item take in that targetCapacity till now
+* Knapsack bag capacity (by Weight) => targetCapacity = 6
+* Coding Approach :
+* Make DP[targetCapacity+1][item] = {0}
+* Base Case :
+* 1. If Knapsack capacity (TargetCapacity) is 0, then we can't put any value in it. hence
+* for(int takenItem=0; takenItem<=totalItems; takenItem++){
+  * DP[0][takenItem] = 0 ; here DP[0][] => zero denotes knapsack of capacity = 0;
+  * }
+* 2. If empty item set is given, then we will have no item to put in our knapsack, so max weight = 0 only.
+* for(int currentCapacity = 0 ; currentCapacity <= targetCapacity; currentCapacity++){
+  * DP[currentCapacity][0] = 0 ; here DP[][0] => zero denotes there are zero items we have
+  * }
+* Main Case : Let's start building our DP in bottom up manner, like first starting from smaller problem and going to targetProblem
+* We will take smaller currentTarget and taking items from item list one by one, or say jth item at a time and try to get 
+* max possible value in our knapsack.
+* Also remember as Repetitions of items is not allowed, so once you pick the current item, don't just stay there but go one set item back
+* means like excluding currentItem, from previous sub-problem.
+* for(int currentCapacity = 1 ; currentCapacity <= targetCapacity; currentCapacity++){
+  * for(int takenItem = 1 ; takenItem <= totalItems ; takenItem++){
+    * //Now it is not possible to pick item whose weight at any time is greater than our knapsack weight capacity (currentCapacity)
+    * //Hence pick only those items whose weight is less than currentCapacity
+    * if(currentCapacity >= itemWeight[takenItem]){
+      * //Now check what was previous value sub-problem once this item is picked with its value added, also from 
+      * //previous capacity exclude this current item. 
+      * //other we will pick what was our value until now in this current capacity only just one item previously
+      * //So we will pick this two item, and get max value, hence code as
+      * DP[currentCapacity][takenItem] = Math.max(DP[currentCapacity-itemWeight[takenItem]][takenItem - 1] + itemValue[takenItem] , DP[currentapacity][takenItem-1] );
+      * //Here this depicts {DP[currentCapacity-itemWeight[takenItem]]<[takenItem - 1]>} : (DP[.][takenItem-1] => takenItem-1 depicts not to include this item again from previous sub-problems 100***)
+      * //Here this <DP[currentapacity][takenItem-1]> completely depicts, just put what was previous value for currentTarget when this takenItem was not considered. what if that is max, so this way we find max value
+    * else{
+    * //In else condition, mostly when weight to taken item is coming greater than knapsack currentCapacity weight,
+    * //So in this case just store the previous value we have calculated till now for currentCapacity and exclude current takenItem
+      * //hence code as
+      * DP[currentCapacity][takenItem] = DP[currentCapacity][takenItem-1] ; //(takenItem-1) => depicts, don't take this current item and just store previous calculated value here.
+* At end our answer will be stored in DP[targetLength][totalItems];
+* That image code is bit difficult, but more focus on table we have made there, rest concept and approach is well explained here
+* So this is all about 0/1 Knapsack problem. Now we understood better.
+* Also just in case repetition would have been allowed then we can use DP[.][takenItem] (takenItem only instead of takenItem-1) as we can reuse that item many times
+* So this is the Unbounded Knapsack problem
+* We will do this in next example, so Unbounded Knapsack and Rod Cutting Problem are same. as in both we could repeat, i.e. we can cut rod of length 2 many a times, as long as rod is longer than 2 to find efficient cutting.
+
+
+
 ## All topics In DP Patterns
 𝐃𝐲𝐧𝐚𝐦𝐢𝐜 𝐏𝐫𝐨𝐠𝐫𝐚𝐦𝐦𝐢𝐧𝐠 𝐀𝐥𝐥 𝐏𝐚𝐭𝐭𝐞𝐫𝐧𝐬 𝐏𝐫𝐞𝐩𝐚𝐫𝐚𝐭𝐢𝐨𝐧 𝐁𝐬𝐭 🔥
 
