@@ -225,6 +225,31 @@
 
 
 
+#### 7-A : Unbounded Knapsack Problem (We can pick same item multiple item)
+* Problem Statement : similar as above, just we can pick same item, weight value multiple times
+* Approach and base case remains same
+* only changes we will do here
+* for(int currentCapacity = 1 ; currentCapacity <= targetCapacity; currentCapacity++){
+  * for(int takenItem = 1 ; takenItem <= totalItems ; takenItem++){
+    * //Now it is not possible to pick item whose weight at any time is greater than our knapsack weight capacity (currentCapacity)
+    * //Hence pick only those items whose weight is less than currentCapacity
+      * if(currentCapacity >= itemWeight[takenItem]){
+        * //Here we can pick same item again, hence no need to takenItem-1 in DP[.][<here>**], just do takenItem, as we can use this in previous sub-problem again
+        * DP[currentCapacity][takenItem] = Math.max(DP[currentCapacity-itemWeight[takenItem]][takenItem**<Here>*] + itemValue[takenItem] , DP[currentapacity][takenItem-1] );
+        * //Here this depicts {DP[currentCapacity-itemWeight[takenItem]]<[takenItem]>} : (DP[.][takenItem] => takenItem depicts means we can use again in previous sub-problem capacity again 100***)
+        * //Here this <DP[currentapacity][takenItem-1]> completely depicts, just put what was previous value for currentTarget when this takenItem was not considered. what if that is max, so this way we find max value
+      * else{
+        * DP[currentCapacity][takenItem] = DP[currentCapacity][takenItem-1] ; //(takenItem-1) => depicts, don't take this current item and just store previous calculated value here.
+* Rest of the code remains same and at end we will get our answer in DP[targetCapacity][totalItems];
+
+
+#### 7-C : Rod Cutting Problem (This is same as above unbounded Knapsack Problem)
+* Similarly like above in knapsack we have itemWeight and ItemValue arrays, here we have cutLength[] array and cutPrice[] array.
+* if cutLength[] array is not given then index indicates the length+1, as 0 index means length to be cut is 1.
+* Sometimes a single DP array also can be used to solve this.
+* So just let's get directly in code, and explain there only
+
+
 ## All topics In DP Patterns
 𝐃𝐲𝐧𝐚𝐦𝐢𝐜 𝐏𝐫𝐨𝐠𝐫𝐚𝐦𝐦𝐢𝐧𝐠 𝐀𝐥𝐥 𝐏𝐚𝐭𝐭𝐞𝐫𝐧𝐬 𝐏𝐫𝐞𝐩𝐚𝐫𝐚𝐭𝐢𝐨𝐧 𝐁𝐬𝐭 🔥
 
