@@ -1,3 +1,30 @@
+#𝐃𝐲𝐧𝐚𝐦𝐢𝐜 𝐏𝐫𝐨𝐠𝐫𝐚𝐦𝐦𝐢𝐧𝐠 is one of the tedious topics if not practiced/optimized well. So I obtained some useful resources from the CodeForces blog that can assist you in improving your approach to solving dynamic programming questions.
+
+
+𝟭) 𝗘𝘃𝗲𝗿𝘆𝘁𝗵𝗶𝗻𝗴 𝗔𝗯𝗼𝘂𝘁 𝗗𝘆𝗻𝗮𝗺𝗶𝗰 𝗣𝗿𝗼𝗴𝗿𝗮𝗺𝗺𝗶𝗻𝗴
+Link: https://lnkd.in/dQDBVqQs
+
+𝟮)𝗦𝗢𝗦 𝗗𝘆𝗻𝗮𝗺𝗶𝗰 𝗣𝗿𝗼𝗴𝗿𝗮𝗺𝗺𝗶𝗻𝗴 [𝗧𝘂𝘁𝗼𝗿𝗶𝗮𝗹]
+Link: https://lnkd.in/dycfq2GM
+
+𝟯)𝗗𝘆𝗻𝗮𝗺𝗶𝗰 𝗣𝗿𝗼𝗴𝗿𝗮𝗺𝗺𝗶𝗻𝗴 𝗼𝗻 𝗧𝗿𝗲𝗲𝘀
+Link: https://lnkd.in/dAJJkekT
+
+𝟰)[𝗧𝘂𝘁𝗼𝗿𝗶𝗮𝗹] 𝗢𝗽𝘁𝗶𝗺𝗶𝘇𝗲𝗱 𝘀𝗼𝗹𝘂𝘁𝗶𝗼𝗻 𝗳𝗼𝗿 𝗞𝗻𝗮𝗽𝘀𝗮𝗰𝗸 𝗽𝗿𝗼𝗯𝗹𝗲𝗺
+Link: https://lnkd.in/dHFXv4va
+
+𝟱)𝗜𝗻𝘁𝗿𝗼𝗱𝘂𝗰𝘁𝗶𝗼𝗻 𝘁𝗼 𝗗𝗣 𝘄𝗶𝘁𝗵 𝗕𝗶𝘁𝗺𝗮𝘀𝗸𝗶𝗻𝗴
+Link: https://lnkd.in/d6ykBjt4
+
+𝟲)𝗗𝘆𝗻𝗮𝗺𝗶𝗰 𝗣𝗿𝗼𝗴𝗿𝗮𝗺𝗺𝗶𝗻𝗴 𝗢𝗽𝘁𝗶𝗺𝗶𝘇𝗮𝘁𝗶𝗼𝗻𝘀
+Link: https://lnkd.in/dDGFySfk
+
+𝟳)[𝗧𝘂𝘁𝗼𝗿𝗶𝗮𝗹]𝗔 𝗖𝗼𝗺𝗽𝗹𝗲𝘁𝗲 𝗚𝘂𝗶𝗱𝗲 𝗼𝗻 𝗠𝗮𝘁𝗿𝗶𝘅 𝗘𝘅𝗽𝗼𝗻𝗲𝗻𝘁𝗶𝗮𝘁𝗶𝗼𝗻
+Link: https://lnkd.in/dfQ7eBpH
+
+By the way, these blogs have been prepared by a good level of competitive coders.
+
+
 # Linear DP
 https://leetcode.com/problems/climbing-stairs/
 https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
