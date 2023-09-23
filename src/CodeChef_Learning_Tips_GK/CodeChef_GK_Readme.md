@@ -2,6 +2,10 @@
 
 ## Basics Understandings, Tips, CodingStyle, GK and Overall Learning
 
+### Very Basic to Take Care as a Competitive Programmer
+* 1. Look for every possible test cases, edge cases, constraints given in problem
+* 2. Solve the problem in a page, write the code there and at end if you feel it handles everything then start writing code.
+
 ### Mostly Java Coding Language We use so GK In it
 #### 1. Use to Try Catch Block in your code (NZEC - Segmentation Error)
 * Sometimes you get NZEC (Segmentation Error) even though your code is running fine in IntellijIdea or local computer,
@@ -35,3 +39,46 @@
 * sum=sum+arr[i];  //this is wrong way
 * Correct Way
 * sum = ( (sum % mod) + ((arr[i]) % mod) ) % mod ; //this is the correct way
+
+#### 5. Use of BufferedWriter gives AC whereas use of System.out.println() gave TLE.
+* BufferedWriter bw = new BufferedWriter(num+ ""); //Gave all correct
+* System.out.println(num+ """); //gave TLE. 
+* This is called efficient writing or buffered writing, storing all answer and at end return the complete output
+* instead of returning answer for each testcase at a time.
+* Also when using BufferedReader you need to use throws java.lang.Exception in it's main function as mentioned below
+* public static void main (String[] args) throws java.lang.Exception{
+* // write your code here
+* };
+
+#### 6.Sometimes use of only BufferedReader or FastReader instead of Scanner gives AC instead of Partial AC
+* Same concept as mentioned above. Scanner is slower than FastReader and BufferedReader
+
+#### 7. As usually Scanner use can be fine, to input any type of value, but if sometimes not then
+* We have BufferedReader to input the values, like multiple strings in same line, what if we take space as part of string so
+* We do code as below 
+* BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+* for(int i = 0 ; i < testCases ; i++){
+  * String lines = br.readLine();
+  * String[] str= lines.trim().split("\\s+");
+  * int i1 = Integer.pars2tInt(str[0]);
+  * int i2= Integer.parseInt(str[1]);
+  * System.out.println(i1+i2); }
+* Input for this case would be like
+* 2
+* 1 4
+* 5
+* 4 5
+* 9
+* For now just ignore such things, as they are not usually required, simple scanner has always worked fine
+* and in codeforces and leetcode we just have function to implement. Our algorithm is what that matters and not inputting 
+* and outputting everytime.
+* For string with spaced code will be like
+* String lines = br.readLine();
+* String[] str= lines.trim().split("\\s+");
+* for(int i = 0; i<arr.length; i++){
+  * arr[i]= str[i];
+  * }
+
+
+### Note About Codechef
+* 1. WA (Wrong Answer) - Meaning : Means the answer is not correct, as probably not all the test cases or edge cases are handled.
