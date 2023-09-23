@@ -91,3 +91,7 @@ public static isPrime(int n){
 * }
 * System.out.println(count);
 * hence done,
+
+
+### 6. (Two Pointer Technique), (Window Sliding Technique), (Trapping Rainwater Problem approach)
+* All these are explain better in the notes provided in this package/folder check there only

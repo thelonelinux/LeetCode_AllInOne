@@ -2,6 +2,10 @@
 
 ## Basics Understandings, Tips, CodingStyle, GK and Overall Learning
 
+### Whenever you get some new concept in problem solving, then don't write whole code and notes, but approach, or pattern
+* which you have found in that problem, and also provide link to it. and little bit of code will do, but enough explaining
+* so that next time you try you must be able to understand what was the approach exactly.
+
 ### Very Basic to Take Care as a Competitive Programmer
 * 1. Look for every possible test cases, edge cases, constraints given in problem
 * 2. Solve the problem in a page, write the code there and at end if you feel it handles everything then start writing code.
