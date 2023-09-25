@@ -12,4 +12,10 @@
 
 ##### Learning Strategy
 * From above conclusion, do more leetcode coding and improve problem solving skills, and also do competitive programming in codeforces, codechef, and Leetcodes and other platforms if anymore
-* DP, Trees and Graphs questions collect and do more understanding and later write code on your own like explaining someone, as we did in DP
+* DP, Trees and Graphs questions collect and do more understanding and later write code on your own like explaining someone, as we did in DP.
+
+
+##### Extra Learning and growth
+* Look for freelancing to improve your overall skills like in java and dotnet
+* Also learn about Devops, AWS, Azure as they are more in demand
+* CAT aptitude and English things you know can also be helpful later
