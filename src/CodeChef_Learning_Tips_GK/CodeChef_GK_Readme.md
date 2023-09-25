@@ -9,6 +9,8 @@
 ### Very Basic to Take Care as a Competitive Programmer
 * 1. Look for every possible test cases, edge cases, constraints given in problem
 * 2. Solve the problem in a page, write the code there and at end if you feel it handles everything then start writing code.
+* 3. If the constraints are 0<=n<=10^9, then that problem has to be solved in O(N)  time complexity.
+  * If N can go upto 10^5 or 7 then it has to be done in O(N^2) or O(NLogN) time
 
 ### Mostly Java Coding Language We use so GK In it
 #### 1. Use to Try Catch Block in your code (NZEC - Segmentation Error)
