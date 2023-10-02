@@ -1,4 +1,4 @@
-package DSA_Learning;
+package DSA_Learning.Tree;
 
 /**
  * In Binary Search Tree left of parent node should always be less and right should be greater.

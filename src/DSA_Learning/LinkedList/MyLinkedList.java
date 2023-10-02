@@ -1,4 +1,4 @@
-package DSA_Learning;
+package DSA_Learning.LinkedList;
 
 /**
  * Here we will see how to implement a linkedList

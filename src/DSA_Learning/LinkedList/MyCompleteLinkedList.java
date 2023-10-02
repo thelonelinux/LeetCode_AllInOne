@@ -1,4 +1,4 @@
-package DSA_Learning;
+package DSA_Learning.LinkedList;
 
 /**
  * Here we will be adding all the methods usually possible in linkedList Custom Implementation
