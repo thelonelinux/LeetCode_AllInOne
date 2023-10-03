@@ -8,6 +8,10 @@
 
 ### Graph important learning links, (more important is you should be able to understand approach and then write code and explain)
 * https://www.programiz.com/dsa/graph
+* Following youtube videos by striver link below
+* https://www.youtube.com/watch?v=M3_pLsDdeuU&list=PLgUwDviBIf0oE3gA41TKO2H5bHpPd7fzn&ab_channel=takeUforward
+* https://takeuforward.org/graph/introduction-to-graph/
+* for notes check above link
 * Don't make note of these things and no need to take printout
 * just learn the approach, write the code as per your understanding and explaining way. first you can see in youtube, then write approach and then code thing
 * In here only you can find link for exploring other DSA topics like linkedlist, tree etc.
