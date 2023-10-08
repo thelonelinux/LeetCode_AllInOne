@@ -1,6 +1,9 @@
 # Graph Learning
 * Strivers Complete DSA Learning with different pattern types and problem solved link
 * https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/
+* All videos problem link for each patter problem typs : 
+* https://www.youtube.com/@takeUforward/playlists
+* Remember participating in contest in must to up skill your problem solving skills
 
 
 ## Graph Learning Process
