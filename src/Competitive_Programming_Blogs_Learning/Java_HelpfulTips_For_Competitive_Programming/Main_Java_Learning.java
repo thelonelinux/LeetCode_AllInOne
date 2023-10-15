@@ -1,4 +1,4 @@
-package Java_HelpfulTips_For_Competitive_Programming;
+package Competitive_Programming_Blogs_Learning.Java_HelpfulTips_For_Competitive_Programming;
 
 
 /**
@@ -8,9 +8,7 @@ package Java_HelpfulTips_For_Competitive_Programming;
 
 import java.text.DecimalFormat;
 import java.util.*;
-import java.io.*;
 import java.lang.*;
-import java.math.*;
 
 public class Main_Java_Learning {
 

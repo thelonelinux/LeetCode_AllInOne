@@ -1,4 +1,4 @@
-package NewAlgorithmLearning;
+package Competitive_Programming_Blogs_Learning.NewAlgorithmLearning;
 
 public class MooresVotingAlgorithm_ForMajorityElement {
 

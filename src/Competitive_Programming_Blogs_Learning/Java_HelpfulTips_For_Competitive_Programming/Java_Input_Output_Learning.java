@@ -1,4 +1,4 @@
-package Java_HelpfulTips_For_Competitive_Programming;
+package Competitive_Programming_Blogs_Learning.Java_HelpfulTips_For_Competitive_Programming;
 
 import java.util.Scanner;
 
