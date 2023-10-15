@@ -1,4 +1,4 @@
-package DSA_Learning.DSA_101_Search_Sort_Stack_Queue_etc;
+package DSA_Learning.DSA_101_Search_Sort_Stack_Queue_Recursion_etc;
 
 public class BinarySearch_Without_Recursion {
 
