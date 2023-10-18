@@ -2,6 +2,14 @@
 
 
 
+## Main for interview questions in overall Data Structure
+* learning link : https://www.interviewbit.com/data-structure-interview-questions/
+* includes topics like stack, queue, hashing, collision, linkedlist vs array, graph, trees and some deep dive DSA interview questions
+* It is important to learn only when you are able to bring approach with coding. that's only then it is useful, else
+* it is like just seeing the question again, but you don't know the appraoch and code. so
+
+
+
 #### Search algorithm
 * 1. Linear search (simple search)
 * 2. binary search (It is done here in non-recursive manner check in code)
