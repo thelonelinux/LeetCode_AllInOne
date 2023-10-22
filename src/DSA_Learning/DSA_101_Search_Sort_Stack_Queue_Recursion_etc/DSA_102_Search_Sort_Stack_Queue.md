@@ -42,6 +42,24 @@
   * And then return the index of our pivot element.
 * Now using this pivot index pi, divide our subarray as arr[lower to pi-1] and arr[pi+1 to higher], in this subarray recursively call partition call and so on.
 * At the end we will get the sorted element
+* ###-----###
+* ###-----###
+* 3. Heap Sort :
+* Heap sort algo has limited use because quicksort and mergesort are better in practice . Nevertheless, the heap data structure itself is enormously used.
+* Approach : 
+* Here most important is to understand heapify algorithm. and then rest all we can easily sort the array
+* Here we have to treat our main array as max heap binary tree with i(0) as parent and 2*i+1 and 2*i+2 as it's two child on left and right respectively.
+* In max heap, we have to bring max element on the parent node.
+* so this process is called heapify of array or binary tree. so we make use of this array and use this like binary tree.
+* Heapify Approach : 
+  * for given array, it's size n, and the index i, is the index of sub-tree where heapify we have to do. 
+  * (Note, we will do heapify on those elements only where it's chilc is present, else no heapify will work for node with no child)
+  * heapify(arr, n, i) ; //i=index of sub-tree, where we are going to do heapify
+  * So our main target is to find largest element and it's index among the three node, i.e. parent, left child and right child
+  * and whoever is max, we will store it's index in largest
+  * and if the largest index is not parent, means one of it's child is max, so this means the sub-tree is affected in child level also. 
+  * so do heapify or call heapify in child node also recursively, so that too will update for max heap
+  * 
 
 
 
