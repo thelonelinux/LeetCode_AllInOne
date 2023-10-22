@@ -19,8 +19,29 @@
 
 #### Sorting Algorithm
 * 1. Merge Sort : 
+* Use this as it will always work in O(N) time complexity in every case whether be best, worst or average case
 * Approach : divide the array recursively, and then merge the divided sub-arrays in sorted manner in main array again. this is the approach. code implemented and well 
 * explained, check in code
+* ###-----###
+* ###-----###
+* 2. Quick Sort : 
+* don't give more focus on it as it will sometimes go O(n),
+* Approach : 
+* A. Do Partition
+  * Here we pick one pivot element. 
+  * Pivot element is taken as last element only here. 
+  * (we can also take median, random or first element also as pivot, pivot is used later to divide our main array in two sub-arrays)
+  * Pivot : (Pivot should be such that, it should be like some approximate middle element after partition is done or when chose pivot is placed in it's sorted position,
+  * So it may not always be possible, the pivot we chose is always the one which divides our main array equally. So take in note on this)
+  * Now from (i = 0 to i=high-1 ) //as arr[n-1] or arr[high] is  chosen as our pivot
+    * We want to move smaller element than our pivot to left side of main array and larger elements at right side of our main array
+    * We do the swapping.
+    * Once we complete this swapping
+    * We come out of the loop
+  * Now put our pivot to its sorted position. i.e. next larger element in the swapped main array and then swap our pivot with it
+  * And then return the index of our pivot element.
+* Now using this pivot index pi, divide our subarray as arr[lower to pi-1] and arr[pi+1 to higher], in this subarray recursively call partition call and so on.
+* At the end we will get the sorted element
 
 
 
