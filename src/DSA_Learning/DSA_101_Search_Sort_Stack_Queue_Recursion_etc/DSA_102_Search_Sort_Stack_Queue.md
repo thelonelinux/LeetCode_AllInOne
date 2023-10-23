@@ -66,6 +66,8 @@
 
 
 #### Stack and Queue
+* Stack and queue implementation code see in self notes in here in this folder.
+* Also stack and queues only code based competitive programming questions are usually asked, and not in interview, so check those kind of questions only
 * No need to do implementation code, as that is easy now
 * Learn interview related questions on this like 
 * 1. Implement stack using 2 queue and implement queue using two stack and other questions in this data structure
