@@ -59,7 +59,9 @@
   * and whoever is max, we will store it's index in largest
   * and if the largest index is not parent, means one of it's child is max, so this means the sub-tree is affected in child level also. 
   * so do heapify or call heapify in child node also recursively, so that too will update for max heap
-  * 
+* ###-----###
+* ###-----###
+* Comparator and other built in sort technique see in the notes PDF only.
 
 
 
