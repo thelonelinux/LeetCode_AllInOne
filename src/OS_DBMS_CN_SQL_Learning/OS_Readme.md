@@ -59,23 +59,27 @@
 #### Inter Process Communication (IPC)
 #### Context Switching in Operating System
 #### Preemptive and Non-Preemptive Scheduling
+* .
 
 ### 6. CPU SCHEDULING IN OS
 #### CPU Scheduling in Operating Systems
 #### CPU Scheduling Criteria
 #### Multiple-Processor Scheduling in Operating System
 #### Thread Scheduling
+* .
 
 ### 7. THREADS IN OS
 #### Thread in Operating System
 #### Threads and its types in Operating System
 #### Multithreading in Operating System
+* .
 
 ### 8. PROCESS SYNCHRONIZATION
 #### Introduction of Process Synchronization
 #### Race Condition Vulnerability
 #### Critical Section in Synchronization
 #### Mutual Exclusion in Synchronization
+* .
 
 ### 9. CRITICAL SECTION PROBLEM SOLUTION
 #### Person's Algorithm in Process Synchronization
@@ -85,6 +89,7 @@
 #### Readers-Writers Problem | Set 1 (Introduction and Readers Preference Solution)
 #### Dining Philosophers Problem Using Semaphores
 #### Hardware Synchronization Algorithsm : Unlock and Lock, test and Set, Swap
+* .
 
 ### 10. DEADLOCKS AND DEADLOCK HANDLING METHODS
 #### Intorduction of Deadlock in Operatings System
@@ -96,6 +101,7 @@
 #### Deadlock Detection and Recovery
 #### Deadock Ignorance in Operating System
 #### Recovery from Deadlock in Operating System
+* .
 
 ### 11. MEMORY MANAGEMENT
 #### Memory Management in OS
@@ -110,7 +116,8 @@
 #### Paging
 #### Segmentation
 #### Virtual Memory
-
+* .
+ 
 
 ### 12. PAGE REPLACEMENT ALGORITHMS
 #### Page Replacement Algorithms
@@ -119,6 +126,7 @@
 #### Optimal Page Replacement Algorithm
 #### Program for Least Recently Used (LRU) Page Replacement algorithm
 #### Techniques to handle Thrashing
+* .
 
 ### 13. STORAGE MANAGEMENT
 #### Storage Management
@@ -127,8 +135,9 @@
 #### Free Space Management
 #### Disk Scheduling Algorithms
 #### RAID (Redundant Arrays of Independent Disks)
+* .
 
 ### 14. OS INTERVIEW QUESTIONS / OS QUIZ AND GATE PYQ'S
-
+* .
 
 
