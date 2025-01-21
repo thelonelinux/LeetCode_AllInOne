@@ -18,9 +18,11 @@
 ## TOPICS WISE LEARNING AND ARRANGEMENTS (INDEX OF OS - LEARNING TOPIC WISE)
 * Precise idea of topicwise learning you can check here - https://www.geeksforgeeks.org/operating-systems/
 * We are following heading topics of this geeksforgeeks sequence wise only
-### EXTRAS - Boot Process, Booting, BIOS, Bootstrap Loader (BootLoader)
-* This topic is added in your notes in old notebook only
+### EXTRAS TOPICS- 
+#### Boot Process, Booting, BIOS, Bootstrap Loader (BootLoader)
+    * This topic is added in your notes in old notebook only
 * . 
+
 ### 1. OPERATING SYSTEM TUTORIAL
 * .
 
@@ -58,7 +60,7 @@
 #### Context Switching in Operating System
 #### Preemptive and Non-Preemptive Scheduling
 
-### 6. CPU SCHEDULING IN IO
+### 6. CPU SCHEDULING IN OS
 #### CPU Scheduling in Operating Systems
 #### CPU Scheduling Criteria
 #### Multiple-Processor Scheduling in Operating System
