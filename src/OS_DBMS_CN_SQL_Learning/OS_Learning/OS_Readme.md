@@ -1,5 +1,6 @@
 # OPERATING SYSTEM (OS)
 * Includes learning related to OS
+* NOTE - OS Notes, after long time will not be useful. For quick revision you can check interview pdf. but understanding properly YT is required.
 
 ## OS
 ### PHYSICAL NOTES COPY
