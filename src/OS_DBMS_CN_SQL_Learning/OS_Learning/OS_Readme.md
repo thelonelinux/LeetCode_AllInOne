@@ -134,7 +134,11 @@
 #### File Allocation Methods
 #### Free Space Management
 #### Disk Scheduling Algorithms
+* Learning from this video for disk management and scheduling algorithm is enough to understand. (GFG is compulsory to check and learn)
+* https://www.youtube.com/watch?v=bqQprtp3byE&list=PL8tc66sMn9Kiy8Xtp5-_lLP8D9gR8gobp&ab_channel=AnjaliSharma
 #### RAID (Redundant Arrays of Independent Disks)
+* Learning from this vide for RAID is enough to understand RAID, and also check in interviewbit question there only is enough.(GFG is compulsory to check and learn)
+* https://www.youtube.com/watch?v=bqQprtp3byE&list=PL8tc66sMn9Kiy8Xtp5-_lLP8D9gR8gobp&ab_channel=AnjaliSharma
 * .
 
 ### 14. OS INTERVIEW QUESTIONS / OS QUIZ AND GATE PYQ'S
