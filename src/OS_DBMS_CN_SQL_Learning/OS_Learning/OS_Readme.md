@@ -15,8 +15,11 @@
 ### YOUTUBE TO LEARN IF ANY
 * .
 
+## SCALER OPERATING SYSTEM LEARNING - FOLLOWING SCALER WAY
+* https://www.scaler.com/topics/operating-system/
+* Here you can find better way of learning for semaphore and check topicwise learning here as well.
 
-## TOPICS WISE LEARNING AND ARRANGEMENTS (INDEX OF OS - LEARNING TOPIC WISE)
+## TOPICS WISE LEARNING AND ARRANGEMENTS (INDEX OF OS - LEARNING TOPIC WISE) - FOLLOWING GFG TOPICWISE
 * Precise idea of topicwise learning you can check here - https://www.geeksforgeeks.org/operating-systems/
 * We are following heading topics of this geeksforgeeks sequence wise only
 ### EXTRAS TOPICS- 
@@ -144,5 +147,10 @@
 
 ### 14. OS INTERVIEW QUESTIONS / OS QUIZ AND GATE PYQ'S
 * .
+
+
+
+
+
 
 
