@@ -56,7 +56,7 @@
 * .
 
 ### 5. PROCESS MANAGEMENT
-#### Introduction to Processmanagement
+#### Introduction to Process Management
 #### Process Table and Process Control Block (PCB)
 #### Operations on Processs
 #### Process Schedulers in Operation System
@@ -108,6 +108,7 @@
 * .
 
 ### 11. MEMORY MANAGEMENT
+* Youtube Found - Can refer this to understand in video : https://www.youtube.com/watch?v=RhNWpUrO5MQ&list=PL8tc66sMn9Kjt2Wf5H9O-TMqZFQukoCQ1&ab_channel=AnjaliSharma
 #### Memory Management in OS
 #### Implementation of Contiguous Memory Management Techniques
 #### Non-Contiguous Allocation
@@ -120,6 +121,41 @@
 #### Paging
 #### Segmentation
 #### Virtual Memory
+* --
+#####  Flow of Learning is Like this (For Deep Learning in YT follow - mentioned above)
+* 1. MEMORY MANAGEMENT INTRO (Why we need) 
+  * Moving of program/process from Physical address (Hard Drive) to Logical Address(RAM) which is then CPU does executing of that process
+  * So we need some Management stuffs to manage this flow. Usually MMU (Memory Management Unit does this task)
+  * Functions of Memory Management - Allocate Memory to Programs/Process (Determine allocation policy), Check status of Memory, Swap inactive process with active process etc.
+* 2. ADDRESS BINDING, LINKING AND LOADING CONCEPTS
+  * ADDRESS BINDING - The program we write is in Secondary Memory. We want it to get executed and bring it in Primary Memory. More check in YT only.
+    * MMU (Memory Management Unit) - It is a hardware component whose main purpose is to convert virtual addressed created by the CPU (Logical address) into physical adressed in the computer's memory.
+  * LINKING - Linking of our compiled program code (main function in C) viz intermediate code which is machine readable (known as object code) with Header files (function library) like std header file in C into an executable file.
+    * Two types of linking : Static (directly use header library) and Dynamic Linking (Use pointer address to get header library rather than complete header library)
+  * LOADING - It is process of loading a program from the secondary memory to main memory
+    * Two types of loading - Static loading (All at a time) and Dynamic loading (when needed)
+* 3. SWAPPING AND OVERLAYS
+   * SWAPPING - Changing of memory location of a process from secondary to main memory and vice versa.
+   * OVERLAYS - When the size of process is greater than Memory allocated to it, then overlays are used to execute such programs. In overlays we keep only those instructions
+     * and data in memory which are needed at any given time. When new instructions are needed they will be loaded in previous used up instructions which is no longer required.
+     * Advantage of Overlay - Using less memory efficiently
+     * Disadvantage - Extensive Programming Requirements (We have to make extra programs to handle such scenarios).
+* 4. MEMORY ALLOCATION TECHNIQUES
+   * Two Types
+     * 1. CONTIGUOUS MEMORY ALLOCATION (like arrays) - This has become obsolete. Not more used in real life systems
+       * A. FIXED OR STATIC ALLOCATION 
+         * All sectors of Memory will be of fixed size. Each partition is called frame. 
+         * The degree of multiprogramming will depend on the number of partitions of this main memory
+       * B. VARIABLE OR DYNAMIC ALLOCATION
+         * All sectors of memory are of different size like 1kb, 2kb, 10kb etc, they are called Hole
+         * Process comes to search the appropriate Hole and get settled, search in sequential only. This searching and allocating memory process is called DYNAMIC STORAGE ALLOCATION PROBLEM
+         * DYNAMIC STORAGE ALLOCATION PROBLEM
+           * 4 ways to resolve this problem (DYNAMIC ALLOCATION)
+             * 1. FIRST FIT
+             * 2. BEST FIT
+             * 3. WORST FIT
+             * 4. NEXT FIT
+     * 2. NON-CONTIGUOUS MEMORY ALLOCATION (like linkedlist)
 * .
  
 
@@ -144,6 +180,32 @@
 * Learning from this vide for RAID is enough to understand RAID, and also check in interviewbit question there only is enough.(GFG is compulsory to check and learn)
 * https://www.youtube.com/watch?v=bqQprtp3byE&list=PL8tc66sMn9Kiy8Xtp5-_lLP8D9gR8gobp&ab_channel=AnjaliSharma
 * .
+#### Storage Management Topic wise learning (as per above YT link)
+##### DISK MANAGEMENT IN OS
+* 1. DISK STRUCTURE 
+  * Topics like Seek Time, Partition
+* 2. FCFS DISK SCHEDULING
+* 3. SSTF DISK SCHEDULING
+* 4. SCAN DISK SCHEDULING
+* 5. C-SCAN DISK SCHEDULING
+* 6. LOOK DISK SCHEDULING
+* 7. C-LOOK DISK SCHEDULING
+* 8. DISK SCHEDULING PRACTISE QUESTIONS
+* 9. RAID (REDUNDANT ARRAY OF INDEPENDENT DISKS)
+  * Motive - If in case disk is corrupt, so for backup we need RAID technique for fault tolerance of our  program code. so that our code we can get back
+  * LEVEL 0 to 6
+  * LEVEL 0 - Only Stripping (dividing our program to separate disks plate)
+  * LEVEL 1 - Stripping and Mirroring (diving our program to separate disks and also creating separate duplicate disk to store our  programs)
+  * LEVEL 2 - Use of hamming code instead of mirroring. We store our duplicate program code in hamming code error correction program and store in new disk
+  * LEVEL 3 - Use of Parity code. this uses less bits as compared to hamming code. Here we create parity code for each programs each partitions and store in new disk.
+  * LEVEL 4 - Here we make Parity code of whole program rather than program crunch and then store it is separate disks.
+  * LEVEL 5 - We won't have a separate disk as whole disk corrupt then whole backup goes  away. so we add each parity program code to separate disk which is being used by programs only. no separate disk for parity.
+  * LEVEL 6 - Here we add parity code of each program in two separate disks which is used by programs only (and not alone) rather than in one.
+  * More you can understand by watching the videos by watching.
+* 10. I/O Management
+
+
+
 
 ### 14. OS INTERVIEW QUESTIONS / OS QUIZ AND GATE PYQ'S
 * .
