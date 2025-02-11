@@ -1,6 +1,8 @@
 # OPERATING SYSTEM (OS)
 * Includes learning related to OS
 * NOTE - OS Notes, after long time will not be useful. For quick revision you can check interview pdf. but understanding properly YT is required.
+* After a long period of learning to understand you must first watch YT, and then Topics notes added here.
+* For revision only, you can peek into interview and here fast topic notes added below.
 
 ## OS
 ### PHYSICAL NOTES COPY
@@ -151,10 +153,14 @@
          * Process comes to search the appropriate Hole and get settled, search in sequential only. This searching and allocating memory process is called DYNAMIC STORAGE ALLOCATION PROBLEM
          * DYNAMIC STORAGE ALLOCATION PROBLEM
            * 4 ways to resolve this problem (DYNAMIC ALLOCATION)
-             * 1. FIRST FIT
-             * 2. BEST FIT
-             * 3. WORST FIT
-             * 4. NEXT FIT
+             * 1. FIRST FIT - When process comes it settles down when it finds the first memory space hole suitable for it.
+             * 2. BEST FIT - When process comes and find most suitable hole according to there size and settle down. Allocate the smallest hole that is big enough. 
+               * We must search the entire list, unless the hole list is ordered by size. This strategy produces the smallest hole
+             * 3. WORST FIT - When process comes and find out large enough hole for it and settle down. It checks from first to last and then select the largest hole.
+             * 4. NEXT FIT - When process continues to search from where the previous process has find out its position. This allocates like first fit only, just searching starts from last left allocation. 
+               * This is done because it will make use of whole list rather than beginning list of holes.
+       * FRAGMENTATION (PARTITION AND MEMORY MANAGEMENT ISSUE)
+         * ..
      * 2. NON-CONTIGUOUS MEMORY ALLOCATION (like linkedlist)
 * .
  
