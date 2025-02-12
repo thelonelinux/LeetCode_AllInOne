@@ -159,9 +159,67 @@
              * 3. WORST FIT - When process comes and find out large enough hole for it and settle down. It checks from first to last and then select the largest hole.
              * 4. NEXT FIT - When process continues to search from where the previous process has find out its position. This allocates like first fit only, just searching starts from last left allocation. 
                * This is done because it will make use of whole list rather than beginning list of holes.
-       * FRAGMENTATION (PARTITION AND MEMORY MANAGEMENT ISSUE)
-         * ..
+       * FRAGMENTATION (PARTITION AND MEMORY MANAGEMENT ISSUE) - (Note - this is possible in contiguous memory allocation only)
+         * PARTITION OF MEMORY - Partition of Memory in Sectors. Goal is to reduce memory wastage (fragmentation) and use of large process to run easily in smaller memory areas (Overlay)
+         * FRAGMENTATION - Inability to use the memory even if it is free is called fragmentation.
+           * Memory fragmentation is when most of your memory is allocated in a large number of non-contiguous blocks, or chunks - leaving a good percentage of your total memory unallocated, but unusable.
+           * 3 forms of Fragmentation (But in sylabus only 2)
+             * INTERNAL FRAGMENTATION
+               * Illustration - lets say we have partitioned our main memory in block size of 10k. We have now process of size 8k. So when we put this process in 10k block, 2k waste we get, this is called internal fragmentation.
+               * CPU will allocate next process in next free block. let say 5k process, so wasted 5k. so it will be allocate in next. now we have 5+2k waste total. so now process of 7k comes then we can't accomodate it even though we have space. because the space is not contgiguous.
+             * EXTERNAL FRAGMENTATION
+               * Illustration - block size 10k taken again. let say we have 10k of 5 partition. so we have 50k total in memory. let say we have occupied block 1, 3, and 5. so we have 2 and 4 block left of each 10k size and total 20k.
+               * Now if we have some process of 20k. then we can't allocate it as 2 and 4 are not contiguous memory block. so this results in external fragmentation
+       * SOLUTIONS OF EXTERNAL FRAGMENTATION
+         * 1. COMPACTION
+           * It is process of combining free memory block group together and used memory block together. This can be useful to remove external fragmentation.
+           * Compaction refers to combine all the empty spaces together.
+           * Processes are on one side and free spaces is on the other side in the memory. During memory compaction we have to first block process for compaction, move them towards lower address space
+           * allocate memory for pending request, resume blocked processes w.r.t compaction, It consumes CPU time (Overhead). Program needs to support the dynamic allocation.
+           * So due to this above disadvantage in compaction we have other way to remove external fragmentation called NON-CONTIGUOUS MEMORY ALLOCATION
+         * 2. NON-CONTIGUOUS MEMORY ALLOCATION
      * 2. NON-CONTIGUOUS MEMORY ALLOCATION (like linkedlist)
+       * Two Types
+         * 1. PAGING
+           * Memory management technique that permits the physical address space of a process/program to be non-contiguous.
+           * Physical memory is divided into fixed size-bock called FRAMES (Main Memory is divided into fixed size block called frames)
+           * Logical memory is divided into fixed size block called PAGES (Process before bringing it to memory can be divided into fixed size block called page)
+           * A frame has the same size as a page, It is place where a logical page can be physically placed
+           * So since the size of page and frame is same then it will remove internal fragmentation. Paging however will not completely irradicate internal fragmentation, as last block of a process page size can be smaller so.
+           * PAGE TABLE 
+             * This is table whose main task is to map the page with frame and store the table list in the table. 
+             * Table contains page column and frame column and which page map to which frame is present there. It has other task also like memory protection etc.
+             * Each process has its own page table stored in memory. Page table is organized as series of entries.
+             * Number of entries in the page table = Number of pages in logical address space of that process/program
+             * Page table contains frame numbers. Page table is kept in the main memory. 
+             * Page table implementation maintains a four bit per page table entry. 
+               * Use bit, Modified bit, valid bit, Read only. (Apart from page number and corresponding frame number. it also does protection task etc.)
+           * PAGE NUMBER AND OFFSET - See in video better explained there. 
+             * Let say a process have 0-15 instructions. so total 16 instructions, Divided into 4 page. so each page has 4 instructions of code. 
+             * So this instructions within the page is called offsets. CPU creates this Logical Address of this page and offset.
+             * Physical address is frame and its offset created for Main Memory RAM.
+           * Advantages - No External Fragmentation, Simple Memory Management Algorithm, Swapping is easy.
+           * Disadvantages - Internal fragmentation (It reduces not totally irradicate), Page table may consume more memory, Multi level paging leads to memory reference overhead.
+           * Numerical problems related to paging. Page table formulas. Address translation
+           * TLB (TRANSLATION LOOK aside BUFFER) - you may ignore this topic from video as out of syllabus. But just check as knowledge.
+             * TLB = Cache (Fast lookup hardware)(Cache Memory) (But used for pages to reduce the effectvie access time for the frame number) - It acts as cache in paging.
+           * SHARED PAGING, TWO LEVEL PAGING AND MISCELLANEOUS TOPICS
+             * PROTECTION - 
+               * So attributes like Page, corresponding frame, read bit, invalid bit etc. these columns can be also added in page table.
+               * To protect page table. If page table we want for read only then set bit to 1. If modifiable set bit to 0. Other additional bit with page table is valid-invalid bit.
+               * So this way memory protection is done.
+             * SHARED PAGES - 
+               * Some programs like Compilers, run time libraries, the code in them is never changed, but might be used again and again by multiple process
+               * So such programs present in Page table is called shared pages. So they are shared in page table
+             * STRUCTURE OF THE PAGE TABLE
+               * 3 TYPES
+               * 1. HIERARCHICAL PAGING
+                 * MULTI-LEVEL PAGING
+                   * Larger page table is not desired because they take lot of memory
+               * 2. HASHED PAGE TABLE
+               * 3. INVERTED PAGE TABLE
+               
+         * 2. SEGMENTATION
 * .
  
 
