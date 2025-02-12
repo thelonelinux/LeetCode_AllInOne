@@ -4,9 +4,16 @@
 * Later interview questions list also you can find there only
 * Extra learning also you can add here only. No Notes Dependencies. 
 
+## WAY TO LEARN
+* Just learn the interview pdf first. (As you already know most of the topics and can explain easily to interviewer)
+* If any difficult topic then get it from the index topic wise below and youtube and done.
+* No need to do very deep learning. As during interview you have to revise anyways.
+* but if you not learn for long time then you have to restart always so.
+
 
 ## DBMS LEARNING TOPIC WISE (Follow any one series to learn)
 * For now following GFG Topicwise : https://www.geeksforgeeks.org/dbms/
+* Scaler topicwise is this : https://www.scaler.com/topics/course/dbms/
 ### OTHER INFOS
 * Notes in self notes also there. But it's not complete and not in topic wise.
 * Get Scaler (Interviewbit) interview questions pdf here.
