@@ -124,7 +124,7 @@
 #### Segmentation
 #### Virtual Memory
 * --
-#####  Flow of Learning is Like this (For Deep Learning in YT follow - mentioned above)
+#####  Flow of Learning is Like this (For Deep Learning in YT follow - mentioned above) (Follow less of my notes added in OS repo)
 * 1. MEMORY MANAGEMENT INTRO (Why we need) 
   * Moving of program/process from Physical address (Hard Drive) to Logical Address(RAM) which is then CPU does executing of that process
   * So we need some Management stuffs to manage this flow. Usually MMU (Memory Management Unit does this task)
