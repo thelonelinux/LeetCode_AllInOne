@@ -9,6 +9,12 @@
 * If any difficult topic then get it from the index topic wise below and youtube and done.
 * No need to do very deep learning. As during interview you have to revise anyways.
 * but if you not learn for long time then you have to restart always so.
+### MOST IMPORTANT LEARN THESE BELOW TOPICS FOR MORE TOUGH INTERVIEW
+* 1. INDEXING AND CLUSTERING
+* 2. TRANSACTIONAL DB, SERIALIZABLE
+* 3. JOINS
+* 4. NORMALIZATION - 1NF, 2NF, 3NF UPTO 4NF WILL BE FINE. JUST ENOUGH TO UNDERSTAND INTERVIWER WITH EXAMPLE
+* REST OF THE TOPICS EVEN YOU REVISE ONCE WILL BE DONE, AS YOU ALREADY KNOW THEM.
 
 
 ## DBMS LEARNING TOPIC WISE (Follow any one series to learn)
