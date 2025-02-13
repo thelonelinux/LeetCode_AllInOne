@@ -4,12 +4,28 @@
 * After a long period of learning to understand you must first watch YT, and then Topics notes added here.
 * For revision only, you can peek into interview and here fast topic notes added below.
 
+## ABOUT NOTES ADDED IN THIS REPO FOR OS
+* 1. Booting_MyNotes_OS.pdf
+  * Learn this for understanding booting process in OS. You can entirely follow this. Good notes
+  * This note is self prepared by me.
+* 2. MemoryMgmt_MyNotes_OS.pdf
+  * Self made notes. 
+  * You can although check it once. But more about memory management topic is already present in this readme file in below lines. That is good already.
+* 3. OS_InterviewBit_Questions.pdf
+  * Scaler/Interviewbit interview related pdf.
+  * Once you able to give all the questions answers then you are prepared completely for OS interview. 
+  * Must complete this pdf all the questions to check if any concept you don't know or missed.
+* 4. YutubeNote_OS_Functions_Methodologies_Intro.pdf
+  * Can be ignored, but read once.
+* 5. YutubeNote_OS_Process_ProcessManagement_Part2.pdf
+  * Can be ignored, but read once.
+
 ## WAY TO LEARN
 * If revision then interviewbit pdf is fine and some notes below is fine. 
 * If you learn after a long time, to re-install the concepts you have to do Youtube learning for main concepts.
 * during interview better learn important chapters. Very high level side questions you might be not able to answer then no worries.
 
-## OS
+## OS LEARNING
 ### PHYSICAL NOTES COPY
 * For beginner notes see your physical saved notes.
 * But need to make a full fledged topic wise notes
