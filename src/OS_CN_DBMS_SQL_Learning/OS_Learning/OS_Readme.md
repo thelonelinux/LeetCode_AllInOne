@@ -114,10 +114,11 @@
 #### Recovery from Deadlock in Operating System
 * .
 
-### 11. MEMORY MANAGEMENT
+
+### 11. MEMORY MANAGEMENT (DONE LEARNING WITH PROPER TOPICS AND YT VIDEOS - KEEP ON REVISING IF NOT WANT TO GO THROUGH VIDEOS AGAIN)
 * Youtube Found - Can refer this to understand in video : https://www.youtube.com/watch?v=RhNWpUrO5MQ&list=PL8tc66sMn9Kjt2Wf5H9O-TMqZFQukoCQ1&ab_channel=AnjaliSharma
 * Re-arranged according to actual learning techniques and flow (Bit mixed in GFG but topics are well explained)
-#### Memory Management in OS (HIGH LEVEL TOPIC DISTRIBUTION)
+#### Memory Management in OS (HIGH LEVEL TOPIC DISTRIBUTION - GFG but enhanced by my own learning and re-ordered topics)
 * 1. Implementation of Contiguous Memory Management Techniques
   * A. Fixed (or static) Partitioning
   * B. Variable (or Dynamic) Partitioning (Below are dynamic allocation technique for contiguous memory allocation)
@@ -131,8 +132,16 @@
   * A. Paging
     * Page Table, MMU
   * B. Segmentation
-#### Virtual Memory
+* 3. Virtual Memory
+  * Page Replacement Algorithms
+   * FIFO Page Replacement Algorithm - Belady's Anomaly in Page Replacement Algorithms
+   * Optimal Page Replacement Algorithm
+   * Program for Least Recently Used (LRU) Page Replacement algorithm
+  * Techniques to handle Thrashing
+    * Learn from this link - https://www.scaler.com/topics/thrashing-in-os/
+    * Thrashing is when huge page replacement is taking place such that the system hangs out. Swapping is part of page replacement algorithm, but thrashing is like worst.
 * --
+#### MY COMPLETE TOPIC WISE LEARNING ABOUT MEMORY MANAGEMENT (WITH TOPIC WISE DEEP LOW LEVEL LEARNING)
 #####  Flow of Learning is Like this (For Deep Learning in YT follow - mentioned above) (Follow less of my notes added in OS repo)
 * 1. MEMORY MANAGEMENT INTRO (Why we need) 
   * Moving of program/process from Physical address (Hard Drive) to Logical Address(RAM) which is then CPU does executing of that process
@@ -324,6 +333,7 @@
         * But this is done to remove the trap and system crashes.
         * Here page table is called Memory map.
         * Backing store is Secondary storage. Where page will get stored in case Main Memory is full.
+    * So technically here we are calling Disk Storage or secondary memory as our virtual memory.
   * ADVANTAGES 
     * System libraries can be shared.
   * IMPLEMENTATION OF VIRTUAL MEMORY
@@ -357,24 +367,49 @@
         * Bring the desired page into the (newly) free frame; update the pate and frame tables
         * Restart the process.
       * PAGE REPLACEMENT ALGORITHM
+        * To reduce page fault we need this page replacement algorithms
         * FIFO PAGE REPLACEMENT ALGORITHM (CONSEQUENCE - BELADY'S ANOMALY)
           * https://www.youtube.com/watch?v=Q3Dkjq0xU0M&list=PL8tc66sMn9Kjt2Wf5H9O-TMqZFQukoCQ1&index=15&ab_channel=AnjaliSharma
-          * 
-      * -
+          * See YT only to understand working using Reference String, Number of frames, Number of page faults, page frames.
+          * Here we will replace that page which came first.
+          * After complete algorithm, at end we will get how many page faults occurred.
+          * This  you can learn better only by looking the YT video only.
+          * Page hit = when the page required is already present in memory frame.
+          * Reference string of page - example (7,0,1,2,0,3,0,4,2,3). These are pages of a process required in the sequence to be added in our memory
+          * Frame size - Total number of frames in main memory
+          * Page fault - Unable to find that page in memory when required.
+          * BELADY'S ANOMALY
+            * The advantage of FIFO page replacement algorithm is easy to implement and disadvantage is that it suffers from Belady's Anomaly
+            * It is an unexpected result in FIFO algorithm. 
+            * In some of the reference strings, increasing the size of the memory (number of frames - frame size) increases the page fault rate.
+            * So this above statement is what belady's anomaly. Remember it is for some reference string of pages only. ie in some  cases.
+        * OPTIMAL PAGE REPLACEMENT ALGORITHM
+          * Here in reference string of pages, we will look forward for the upcoming required pages in reference string.
+          * So looking forward whichever page has demand very later stage in the reference string. we will replace that only.
+          * So this is called optimal page replacement algorithm approach
+          * Rest check in YT to understand with example
+        * LEAST RECENTLY USED (LRU) PAGE REPLACEMENT ALGORITHM
+          * Unlike Optimal where we look forward here we will look at backward.
+          * And whichever page was used least recently, we will replace that page.
+          * Remember least recently used is not like First used for first come. It can be possible that same page was required again. so that becomes now recent one.
+          * For more you can check in YT only. Well explained with example.
+          * Least recently used can be fifo only when there is  distinct pages in reference string of pages.
+      * TYPES OF PAGE REPLACEMENT ALGORITHMS
+        * GLOBAL REPLACEMENT
+          * Global Replacement allows a process  to select a replacement frame from the set of all frames even that frame is currently allocated to some other process. 
+        * LOCAL REPLACEMENT
+          * Local Replacement requires that each process select from only its own set of allocated frames.
+      * THRASHING
+        * Techniques to handle Thrashing
+        * Learn from this link - https://www.scaler.com/topics/thrashing-in-os/
+        * Thrashing is when huge page replacement is taking place such that the system hangs out. Swapping is part of page replacement algorithm, but thrashing is like worst.
+      * -end of lecture
     * 2. DEMAND SEGMENTATION
-* .
- 
+      * Nothing about this. not so important
+* --<END>--
 
-### 12. PAGE REPLACEMENT ALGORITHMS
-#### Page Replacement Algorithms
-#### Program for page Replacement Algorithms | Set 2 (FIFO)
-#### Belady's Anomaly in Page Replacement Algorithms
-#### Optimal Page Replacement Algorithm
-#### Program for Least Recently Used (LRU) Page Replacement algorithm
-#### Techniques to handle Thrashing
-* .
 
-### 13. STORAGE MANAGEMENT
+### 12. STORAGE MANAGEMENT
 #### Storage Management
 #### File Systems in Operating System
 #### File Allocation Methods
@@ -413,7 +448,7 @@
 
 
 
-### 14. OS INTERVIEW QUESTIONS / OS QUIZ AND GATE PYQ'S
+### 13. OS INTERVIEW QUESTIONS / OS QUIZ AND GATE PYQ'S
 * .
 
 
