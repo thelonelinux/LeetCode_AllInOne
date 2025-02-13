@@ -253,6 +253,13 @@
                 * Internally linkedlist is used to point to the frame. This hash table is like array of linkedList to understand in coding way. Where linkedlist points to frames.
                 * So whenever that page is required again, we make use of hash function to get that from hash table and put in main memory. Here instead of page table we can say it's hash table.
                * 3. INVERTED PAGE TABLE
+                 * Very Imp - 
+                   * Inverted Page Table is the global page table which is maintained by the OS for all the processes. In inverted page table, the number of entries is equal to the number of frames in the main memory.
+                   * It can be used to overcome the drawbacks of page table
+                   * There is always a space reserved for the page regardless of the fact that whether it is present in the man memory or not, However, this is simply the wastage of the memory if the page is not present.
+                   * We can save this wastage by just inverting the page table. We can save the details only for the pages which are present in the main memory. 
+                   * Frames are the indices and the information saved inside the block will be Process ID and page number.
+                   * Like in frame1(P1 page5) in frame2(P2 page3), in frame3(P1 page2). etc.
                  * This says that we want only one page table to maintain for all processes. We don't want 100 page tables created for 100 processes as they will use lot of memory.
                  * So this time when CPU will generate Logical Address for a Process, this time it will generate ProcessID along with Page Number in the Logical address.
                  * So previously CPU generates Logical address  for a process having Page Number of a process
