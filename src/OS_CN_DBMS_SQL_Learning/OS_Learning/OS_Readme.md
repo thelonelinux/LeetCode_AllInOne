@@ -86,7 +86,46 @@
 #### Inter Process Communication (IPC)
 #### Context Switching in Operating System
 #### Preemptive and Non-Preemptive Scheduling
-* .
+* .----
+#### MY COMPLETE TOPIC WISE LEARNING ABOUT PROCESS MANAGEMENT (WITH TOPIC WISE DEEP LOW LEVEL LEARNING)
+* Youtube Found - Can refer this to understand in video :
+  * https://www.youtube.com/watch?v=OrM7nZcxXZU&list=PLBlnK6fEyqRgKl0MbI6kbI5ffNt7BF8Fn&ab_channel=NesoAcademy
+* Re-arranged according to actual learning techniques and flow (Bit mixed in GFG but topics are well explained)
+#####  Flow of Learning is Like this (For Deep Learning in YT follow - mentioned above) (Follow less of my notes added in OS repo)
+* 1. PROCESS MANAGEMENT INTRO
+  * Motive - To provide CPU/Process to our programs/process to get maximum throughput.
+  * PROCESS AND THREADS
+    * PROCESS
+      * A process can be thought of as a program in execution
+    * THREAD
+      * A thread is the unit of execution within a process. A process can have anywhere from just one thread to many threads.
+    * Using process explorer tool u can see all the process and it's thread running. see YT.
+  * PROCESS STATE
+    * Process in execution will go through below states
+    * NEW STATE - The process is being created
+    * RUNNING STATE - The process is being executed
+    * WAITING STATE - The process is waiting for some event to occur (Such as an I/O completion or recption of a signal).
+    * READY STATE - The process is waiting to be assigned to a processor.
+    * TERMINATED STATE - The process has finished execution.
+    * Diagram you can see in YT. Well explained.
+    * https://www.youtube.com/watch?v=jZ_6PXoaoxo&list=PLBlnK6fEyqRgKl0MbI6kbI5ffNt7BF8Fn&index=2&ab_channel=NesoAcademy
+    * IMPORTANT - See youtube to understand process state transition better.
+  * PROCESS CONTROL BLOCK
+    * Each process is represented in the operating system by a Process Control Block (PCB) - also called as task control block
+    * Some of the items that PCB stores are 
+      * Process State - It says in which state the process is in at that particular moment.
+      * Process Number - Process ID, It shows the unique number to identify the process.
+      * Program Counter - It indicates the address of the next instruction of that paritcualr process that has to be executed for that particular process.
+      * CPU Registers - It tells about the  registers used by that process. Registers like index registers, stack registers.
+      * memory limits
+      * List of open files
+      * CPU Scheduling Information - It stores the priority of the processes. Stores the pointer to the scheduling queue and other scheduling parameter.
+      * Memory management information - It tells the memory that is being used by the process.
+      * Accounting information - It keeps account of all the resources which is being used by the particular process. Resources can be CPU, Time, or Memory. 
+      * Input/Output Status Information - It stores what all I/O devices are assigned to this process.
+  * PROCESS SCHEDULING
+    * The objective of multiprogramming is to have some process running at all times, to maximize CPU utilization
+    * 
 
 ### 6. CPU SCHEDULING IN OS
 #### CPU Scheduling in Operating Systems
@@ -132,8 +171,6 @@
 
 
 ### 11. MEMORY MANAGEMENT (DONE LEARNING WITH PROPER TOPICS AND YT VIDEOS - KEEP ON REVISING IF NOT WANT TO GO THROUGH VIDEOS AGAIN)
-* Youtube Found - Can refer this to understand in video : https://www.youtube.com/watch?v=RhNWpUrO5MQ&list=PL8tc66sMn9Kjt2Wf5H9O-TMqZFQukoCQ1&ab_channel=AnjaliSharma
-* Re-arranged according to actual learning techniques and flow (Bit mixed in GFG but topics are well explained)
 #### Memory Management in OS (HIGH LEVEL TOPIC DISTRIBUTION - GFG but enhanced by my own learning and re-ordered topics)
 * 1. Implementation of Contiguous Memory Management Techniques
   * A. Fixed (or static) Partitioning
@@ -158,6 +195,9 @@
     * Thrashing is when huge page replacement is taking place such that the system hangs out. Swapping is part of page replacement algorithm, but thrashing is like worst.
 * --
 #### MY COMPLETE TOPIC WISE LEARNING ABOUT MEMORY MANAGEMENT (WITH TOPIC WISE DEEP LOW LEVEL LEARNING)
+* Youtube Found - Can refer this to understand in video : 
+  * https://www.youtube.com/watch?v=RhNWpUrO5MQ&list=PL8tc66sMn9Kjt2Wf5H9O-TMqZFQukoCQ1&ab_channel=AnjaliSharma
+* Re-arranged according to actual learning techniques and flow (Bit mixed in GFG but topics are well explained)
 #####  Flow of Learning is Like this (For Deep Learning in YT follow - mentioned above) (Follow less of my notes added in OS repo)
 * 1. MEMORY MANAGEMENT INTRO (Why we need) 
   * Moving of program/process from Physical address (Hard Drive) to Logical Address(RAM) which is then CPU does executing of that process
