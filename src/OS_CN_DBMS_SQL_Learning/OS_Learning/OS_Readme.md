@@ -125,7 +125,78 @@
       * Input/Output Status Information - It stores what all I/O devices are assigned to this process.
   * PROCESS SCHEDULING
     * The objective of multiprogramming is to have some process running at all times, to maximize CPU utilization
-    * 
+    * The objective of time-sharing is to switch the CPU among processes so frequently that users can interact with each program while it is running.
+      * Example, type a doc. listen music, and download file. We are doing three task at same time in system. But actually what is happening is CPU is switching to each process so frequently and quickly we don't realise.
+    * How to accomplish the objectives of MULTIPROGRAMMING AND TIME SHARING
+      * To meet these objectives, the process scheduler selects an available process(possibly from a set of several available processes) for program execution on the CPU.
+        * For a single-processor system, there will never be more than one running process.
+        * If there are more processes, the rest will have to wait until the CPU is free and can be rescheduled.
+        * The process scheduler takes care of this.
+    * SCHEDULING QUEUES
+      * JOB QUEUE - As processes enter the system, they are put int oa job queue. which consists of all processes in the system.
+      * READY QUEUE - The processes that are residing in main memory and are ready and waiting to execute are kept on a list called the ready queue.
+      * SEE THE DIAGRAM IN YT WORKING - https://www.youtube.com/watch?v=2h3eWaPx8SA&list=PLBlnK6fEyqRgKl0MbI6kbI5ffNt7BF8Fn&index=5
+  * CONTEXT SWITCH
+    * Interrupts cause the operating system to change a CPU from its current task and to run a kernel routine (When higher priority task comes up).
+    * Such operations happen frequently an general-purpose systems.
+    * When an interrupt occurs, the system needs to save the current context of the process currently running on the CPU so that it can restore
+      * that context when its processing is done, essentially suspending the process and then resuming it.
+    * The context is represented in the PCB of the process.
+    * Switching the CPU to another process requires performing a state save of the current process and a state restore of a different process. This task is known as a context switch.
+    * Some Imp Points about Context Switching
+      * Context-switch time is pure overhead (Waste of time and resource), but the system does no useful work while switching.
+      * Its speed varies from machine to machine, depending on the memory speed, the number of resigters that must be copies, and the existence of special instructions (such as a single instruction to load or store all registers).
+      * Typical speeds are few milliseconds.
+  * OPERATIONS ON PROCESSES
+    * PROCESS CREATION
+      * A process may create serveral new processs, via a create-process system call, during the course of execution
+      * The creating process is called a parent process, and the new processes are called the children of that process.
+      * Each of these new processs mah in turn create other processes, forming a tree of processes.
+      * Tree diagram of process creation check in YT. (Not so imp) - https://www.youtube.com/watch?v=pSW9d3Oaie8&list=PLBlnK6fEyqRgKl0MbI6kbI5ffNt7BF8Fn&index=6&ab_channel=NesoAcademy
+      * Possibilities (In terms of memory)
+        * The parent continues to execute concurrently with its children
+        * The parent waits until some or all of tis children have terminated.
+      * Possibilities (In terms of address space)
+        * Child process is a duplicate of the parent process (Same code and date)
+        * The child process has a new program loaded into it.
+    * PROCESS TERMINATION
+      * A process terminates when it finishes executing its final statement and ask the os to delete it by using the exit() system call.
+      * At that point, the process may return a statu value (typically a integer) o its parent process (via the wait() system call).
+      * All the resources of the process- including physical and virtual memory, open fies, and I/O buffers- are deallocated by the os.
+      * Other circumstances to cause termination of process
+        * A process can cause the termination of another process via an appropriate system call. Such system call can only be invoked only by the parent of the process that is to be terminated.
+        * Reasons for parent process to kill child process
+          * If child has exceed the resources allocated. Parent will have mechanism to find how.
+          * If child is no longer required
+          * If parent terminates, child should also terminate.
+  * INTERPROCESS COMMUNICATION
+    * Processes executing concurrently i the operating system may bne either independent processes or cooperating processes.
+    * INDEPENDENT PROCESSES
+      * They cannot affect or be affected by the other processes executing in the system.
+    * COOPERATING PROCESS
+      * They can affect or be affected by the other process executing in the system.
+      * Any process that shares data with other processes in a cooperating process.
+      * In cooperating process we need interprocess communication.
+    * THERE ARE SEVERAL REASONS FOR PROVIDING AN ENVIRONMENT THAT ALLOWS PROCESS COOPERATOION
+      * Information Sharing
+      * Computation speedup
+      * Modularity
+      * Convenience
+    * Cooperating processes require an interprocess communication (IPC) mechanism that will allow them to exchange data and information
+    * THERE ARE TWO FUNDAMENTAL MODELS OF INTERPROCESS COMMUNICATION
+      * 1. SHARED MEMORY
+        * In the shared-memory model, a region of memory that is shared by cooperating process is established. 
+        * Processes can then exchange information by reading and writing data to the shared region
+      * 2. MESSAGE PASSING
+        * In the message passing model, communication takes place by means of message exchange between the cooperating processes.
+      * You can see the diagram in YT. - https://www.youtube.com/watch?v=dJuYKfR8vec&list=PLBlnK6fEyqRgKl0MbI6kbI5ffNt7BF8Fn&index=8&ab_channel=NesoAcademy
+    * SHARED MEMORY SYSTEMS (Deep dive)
+      * Diagram see in yt - https://www.youtube.com/watch?v=dJuYKfR8vec&list=PLBlnK6fEyqRgKl0MbI6kbI5ffNt7BF8Fn&index=8&ab_channel=NesoAcademy
+      * Typically, a shared-memory region resides in the address space of the process creating the shared-memory segment.
+      * Other processes that wish to communicate using this shared-memory segment must attach it to their adress space.
+      * Process must remove restrictions to access other process memory access else OS won't allow to access.
+      * PRODUCER CONSUMER PROBLEM
+        * 
 
 ### 6. CPU SCHEDULING IN OS
 #### CPU Scheduling in Operating Systems
