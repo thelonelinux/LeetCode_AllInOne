@@ -92,8 +92,8 @@
   * Preemptive and Non-Preemptive Scheduling
   * CPU Scheduling Criteria
   * Multilevel Queue Scheduling
-#### Multiple-Processor Scheduling in Operating System
-#### Thread Scheduling
+#### Multiple-Processor Scheduling in Operating System (TODO - Or leave)
+#### Thread Scheduling (TODO - Or leave)
 * .---.
 #### MY COMPLETE TOPIC WISE LEARNING ABOUT PROCESS MANAGEMENT (WITH TOPIC WISE DEEP LOW LEVEL LEARNING)
 * Youtube Found - Can refer this to understand in video 
@@ -346,6 +346,7 @@
         * 2. SJF (SHORTEST JOB FIRST)
         * 3. LJF (LONGEST JOB FIRST)
         * 4. HRRN (HIGHEST RESPONSE RATIO NEXT)
+    * for gantt chat and numerical understanding of each scheduling algorithm
   * MULTILEVEL QUEUE SCHEDULING (simple diagram you can see in notes pdf)
     * Until now we have only make sure of single ready queue. And we pick process from it using some scheduling algorithm.
     * In Multilevel Queue Scheduling - In real life in our system we don't have same type of process. So in multilevel queue we divide into three categories as 
@@ -359,7 +360,7 @@
     * Here we give feedback by lower priority queue that it has being idle for some time. so cpu is notice and bring this in cpu
     * highest priority will work for 8 time unit, then goes to medium priority which works for 6 time quant and then lowest priority queue will have 2 time quant.
     * so like this it works.
-    * see in notes pdf.
+    * see in notes pdf. for gantt chat and numerical understanding of each scheduling algorithm
 * --
 * 3. PROCESS SYNCHRONIZATION
   * 
