@@ -88,9 +88,13 @@
 * 2. Inter Process Communication (IPC)
   * Shared Memory
   * Message Passing
-#### Process Schedulers in Operation System (Left to do to add in notes here below)
-#### Preemptive and Non-Preemptive Scheduling
-* .----
+* 3. Process Schedulers in Operation System
+  * Preemptive and Non-Preemptive Scheduling
+  * CPU Scheduling Criteria
+  * Multilevel Queue Scheduling
+#### Multiple-Processor Scheduling in Operating System
+#### Thread Scheduling
+* .---.
 #### MY COMPLETE TOPIC WISE LEARNING ABOUT PROCESS MANAGEMENT (WITH TOPIC WISE DEEP LOW LEVEL LEARNING)
 * Youtube Found - Can refer this to understand in video 
 * https://www.youtube.com/watch?v=OrM7nZcxXZU&list=PLBlnK6fEyqRgKl0MbI6kbI5ffNt7BF8Fn&ab_channel=NesoAcademy
@@ -311,21 +315,62 @@
         * https://www.youtube.com/watch?v=uagKTbohimU&list=PLBlnK6fEyqRgKl0MbI6kbI5ffNt7BF8Fn&index=13&ab_channel=NesoAcademy
         * Communication using socket (See YT diagram)
     * RPC (Remote Procedure calls)  - further in YT - Not part in syllabus
-      * 
+    * 
+* --
+* 2. CPU PROCESS SCHEDULING ALGORITHM (THIS IS TAKEN FROM YOUR WRITTEN NOTES ONLY - WELL EXPLAINED THERE ONLY. ADD CHECK IN PDF)
+  * To execute multiple process in CPU, we first bring those process in RAM in ready Queue, and from here execution takes place
+  * In case we are using uniprocessor (1 CPU) system, then at a time single process in CPU
+  * So to use criterial to keep this process in queue is called scheduling algorithm
+  * CPU SCHEDULING TERMS
+    * ARRIVAL TIME - The time at which process enter the Ready queue or state
+    * BURST  TIME - It is time required by a process to get execute on CPU
+    * COMPLETION TIME - The time at which process complete its execution
+    * TURN AROUND TIME - completion time - arrival time
+    * WAITING TIME - turn around time - burst time
+    * RESPONSE TIME - the time at which a process get CPU first time - arrival time
+  * TWO TYPES OF PROCESS
+    * CPU BOUND - Time in CPU to execute that process
+    * I/O BOUND - e.g. printer and scanner invoke process. To print or scan process.
+  * There are two types we can divide our scheduling algorithm (The table with numericals see in note pdf)
+    * 1. PRE-EMPTIVE
+      * Here other process can come in and replace current process using the CPU.
+      * Types of Pre-Emptive
+        * 1. SRTF (SHORTEST REMAINING TIME FIRST)
+        * 2. LRTF (LONGEST REMAINING TIME FIRST)
+        * 3. ROUND ROBIN
+        * 4. PRIORITY BASED
+    * 2. NON PRE-EMPTIVE
+      * Here current process is not replaced until the current process is completed. 
+      * Types of Non Pre-emptive
+        * 1. FCFS (FIRST COME FIRST SERVE)
+        * 2. SJF (SHORTEST JOB FIRST)
+        * 3. LJF (LONGEST JOB FIRST)
+        * 4. HRRN (HIGHEST RESPONSE RATIO NEXT)
+  * MULTILEVEL QUEUE SCHEDULING (simple diagram you can see in notes pdf)
+    * Until now we have only make sure of single ready queue. And we pick process from it using some scheduling algorithm.
+    * In Multilevel Queue Scheduling - In real life in our system we don't have same type of process. So in multilevel queue we divide into three categories as 
+      * HIGHEST PRIORITY - Consists of System process
+      * MEDIUM PRIORITY - Consists of Interactive Process
+      * LOWEST PRIORITY - Batch process
+    * Also in above each process can have their own scheduling algorithm. Then can be same also different also.
+    * Also disadvantages here is that if we've a lot of system process (Highest Priority) then batch process won't get time to execute. so the starvation occurs.
+    * So to remove this we can make use of multilevel feedback queue.
+  * MULTILEVEL FEEDBACK QUEUE (see diagram in notes pdf)
+    * Here we give feedback by lower priority queue that it has being idle for some time. so cpu is notice and bring this in cpu
+    * highest priority will work for 8 time unit, then goes to medium priority which works for 6 time quant and then lowest priority queue will have 2 time quant.
+    * so like this it works.
+    * see in notes pdf.
+* --
+* 3. PROCESS SYNCHRONIZATION
+  * 
+    
 * --- < END > ------
 
-### 6. CPU SCHEDULING IN OS
-#### CPU Scheduling in Operating Systems
-#### CPU Scheduling Criteria
-#### Multiple-Processor Scheduling in Operating System
-#### Thread Scheduling
-* .
 
-### 7. THREADS IN OS
+### 6-7. THREADS IN OS
 #### Thread in Operating System
 #### Threads and its types in Operating System
 #### Multithreading in Operating System
-* .
 
 ### 8. PROCESS SYNCHRONIZATION
 #### Introduction of Process Synchronization
