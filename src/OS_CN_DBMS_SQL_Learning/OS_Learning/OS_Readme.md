@@ -190,13 +190,125 @@
       * 2. MESSAGE PASSING
         * In the message passing model, communication takes place by means of message exchange between the cooperating processes.
       * You can see the diagram in YT. - https://www.youtube.com/watch?v=dJuYKfR8vec&list=PLBlnK6fEyqRgKl0MbI6kbI5ffNt7BF8Fn&index=8&ab_channel=NesoAcademy
-    * SHARED MEMORY SYSTEMS (Deep dive)
-      * Diagram see in yt - https://www.youtube.com/watch?v=dJuYKfR8vec&list=PLBlnK6fEyqRgKl0MbI6kbI5ffNt7BF8Fn&index=8&ab_channel=NesoAcademy
-      * Typically, a shared-memory region resides in the address space of the process creating the shared-memory segment.
-      * Other processes that wish to communicate using this shared-memory segment must attach it to their adress space.
-      * Process must remove restrictions to access other process memory access else OS won't allow to access.
-      * PRODUCER CONSUMER PROBLEM
-        * 
+    * SHARED MEMORY SYSTEMS (Deep dive) (BETTER CHECK MORE VIDEOS FOR BETTER UNDERSTANDING)
+        * In LayMan words - Here we have extra communicating process present in shared memory between two process. there they update some message and used by both the process.
+        * Diagram see in yt - https://www.youtube.com/watch?v=dJuYKfR8vec&list=PLBlnK6fEyqRgKl0MbI6kbI5ffNt7BF8Fn&index=8&ab_channel=NesoAcademy
+        * Typically, a shared-memory region resides in the address space of the process creating the shared-memory segment.
+        * Other processes that wish to communicate using this shared-memory segment must attach it to their address space.
+        * Process must remove restrictions to access other process memory access else OS won't allow to access. (What is address space?)
+        * Some Examples of Shared Memory Programs are as follows - Producer consumer problem
+        * PRODUCER CONSUMER PROBLEM
+          * Example of Producer consumer program/process is
+            * For example, a compiler may produce assembly code, which is consumed by an assembler
+            * Other example like, The assembler, in turn, may produce object modules, which are consumed by the loader.
+            * Other example like, Client-Server model. Server is producing HTML files and client is consuming those files.
+          * Problems/issue faced in producer consumer problem
+            * The Client must consume what is produced by the server. And not something else.
+            * We want the process of producer and consumer to be concurrent.
+            * So how to resolve this issue. How to make our producer and consumer work concurrently.
+            * We have the following solutions to resolve this problem
+              * 1. Shared Memory (As we have already discussed above)
+                * One of the solution to the producer-consumer problem uses shared memory
+                * To allow producer and consumer processes to run concurrently, we must have available a buffer of items that 
+                * can be filled by the producer and emptied by the consumer. Buffer will be filled by the producer and emptied by consumer.
+                * Buffer will be kepd in shared memory
+                * A producer can produce one item while the consumer is consuming another item.
+                * The producer and consumer must be synchronized, so that the consumer does not try to consume an item that has not yet been produced.
+                * Two kinds of buffers
+                  * 1. Unbounded Buffer
+                    * Places no practical limit on the size of the buffer. The consumer may have to wait for new items, but hte producer can always produce new items.
+                    * 
+                  * 2. Bounded Buffer 
+                    * Assumes a fixed vuffer size. In this case, the consumer must wait if the buffer is empty, and the producer must wait if the buffer is full.
+    * MESSAGE-PASSING SYSTEMS
+      * Here we don't need to share memory space.
+      * Mostly useful for distributed environment.
+      * Here the communicating process may reside on different computers connected by a network.
+      * Example chatting via internet. You send message to your friend in other system. Your friend receives the message. But here we chat via network.
+        * Here we don't have any shared memory. So here message passing system is used, and we communicate via messages.
+      * Two operations are provided by the message-passing facility
+        * 1. Send (Message) - send message to other process.
+        * 2. Receive (Message) - receive message from other process
+      * Message sent by a process can of either fixed or variable size.
+        * Fixed Size - Simple fixed size implementation. But since size if fixed, this makes the task of programming more difficult.
+        * Variable Size - More complex system-level implementation as size is variable, but the programming task becomes simpler, as we can send any size message.
+      * A communication link must exist between the process. Some of the methods are (Logical implementing a link)
+        * 1. Direct or indirect communication
+        * 2. Synchronous or asynchronous communication
+        * 3. Automatic or explicit buffering
+        * There are several issues related with features like : 
+          * Naming (Issue Present in Direct or indirect communication)
+          * Synchronization (Issue Present in Synchronous or asynchronous communication)
+          * Buffering (Issue Present in Direct or indirect communication / Automatic or explicit buffering)
+          * NAMING (Issue present in Direct or Indirect communication)
+            * Process that want to communicate with each other must have a way to refer to each other. 
+            * They can use either direct or indirect communication.
+            * This is where NAMING comes into play.
+            * DIRECT COMMUNICATION - 
+              * Explicitly specify to which process you are sending the message.
+                * Example send( P, Message) - send a message to process P.
+                * receive (Q, message) - receive a message from process Q.
+              * Here link is established automatically every pari of processed that want to communicate.
+              * The processes need to know only each other's identify to communicated.
+              * Two process will have exactly one link for them to communicate.
+              * This scheme exhibits Symmetry in addressing : name each other to communicate.
+              * ANOTHER VARIANT (of direct communication)
+                * Only the sending process needs to specify the name of the recipient.
+                * recipient is not required name the sender.
+                * send (P, message).  receive (id, message) - id is process from which we want to receive, and id can vary. not constant so.
+                * This scheme employs asymmetry in addressing
+              * DISADVANTAGE - If Id of process is changed then it will create issue. Many other codes will be updated when process id is changed.
+            * INDIRECT COMMUNICATION
+              * Mailbox plays an intermediate to send and receive message.
+              * Process send message in mailbox and recipient read message from mailbox.
+              * Each mailbox has unique identification where process identify.
+              * Send (A, message), receive(A, message) - A is mailbox here.
+              * Each communicating process will have number of different links, wth each link corresponding to one mailbox.
+              * But it will create issue if one process have multiple link.
+              * So only one link associated with the two processes at most.
+              * See YT for how to know whihc process will receive if two process has same receive mailbox.
+                * Usually sytem will decide. or let only one recipient has same link as sender.
+              * Mailbox is either owned by the process or OS.
+          * SYNCHRONIZATION (Issue present in Synchronous or asynchronous communication)
+            * We know in Message Passing system we use send(), receive() primitives to communicate between the process.
+            * Message passing may be either blocking or nonblocking -also known as synchronous and asynchronous.
+            * Blocking = Synchronous 
+            * Unblocking = Asynchronous
+            * Blocking send - Sending process will be blocked until the message is received by the receiving process or by the mailbox.
+            * Nonblocking send - Sending process will send the message and resumes operation.
+            * Blocking receive - The receiver blocks until a message is available
+            * Nonblocking receive - The receiver retrieves either a valid message or a null.
+          * BUFFERING (Issue Present in Direct or indirect communication / Automatic or explicit buffering)
+            * In Direct or Indirect communication, message exchanged by the communicating process reside in temporary queue.
+            * This temporary queue is called Buffer.
+            * So this queues(Buffer) can be implemented in three ways.
+              * ZERO CAPACITY BUFFER/QUEUE
+                * Max queue length is zero. As we don't want messages waiting. It should directly send message to recipient.
+                * Sender must be blocked until the recipient receives the message
+              * BOUNDED CAPACITY BUFFER/QUEUE
+                * Queue Length = n. Until queue is full sender can continue execution.
+                * If the link/queue is full sender must be blocked until space is available in the queue.
+              * UNBOUNDED CAPACITY BUFFER/QUEUE
+                * Queue Length = infinite. Sender keeps sending the message and never blocked.
+                * Receiver will receive the message whenever required.
+    * INTERPROCESS COMMUNICATION IN CLIENT-SERVER SYSTEMS (Don't go deep not part of OS Syllabus)
+      * SOCKETS
+        * A socket is defined as an endpoint for communication
+        * A pair of processes communicating over a network employ a pair of socket-one for each process.
+        * A socket is identifier by an IP address concatenated with a port number.
+        * The server waits for incoming client requests by listening to a specified port. 
+        * Once a request is received, the server accepts a connection from the client socket to complete the connection.
+        * Port number is used to identify process.
+        * Servers implementing specific services (such as telnet - remote login, ftp and http)
+        * telnet server listens to port 23, ftp to port 21 and web or http to port 80.
+        * These ports can't be assigned to other client or process.
+        * All port below 1024 are already reserved for standard services. So we don't chose from them.
+        * Rest see in YT for socket
+        * https://www.youtube.com/watch?v=uagKTbohimU&list=PLBlnK6fEyqRgKl0MbI6kbI5ffNt7BF8Fn&index=13&ab_channel=NesoAcademy
+        * Communication using socket (See YT diagram)
+    * RPC (Remote Procedure calls)  - further in YT - Not part in syllabus
+      * 
+* --- < END > ------
 
 ### 6. CPU SCHEDULING IN OS
 #### CPU Scheduling in Operating Systems
