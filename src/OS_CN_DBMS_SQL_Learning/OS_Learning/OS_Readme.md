@@ -79,17 +79,21 @@
 * .
 
 ### 5. PROCESS MANAGEMENT
-#### Introduction to Process Management
-#### Process Table and Process Control Block (PCB)
-#### Operations on Processs
-#### Process Schedulers in Operation System
-#### Inter Process Communication (IPC)
-#### Context Switching in Operating System
+* 1. Introduction to Process Management
+  * Pre-requisites Topics
+    * Process and Threads
+    * Process Table and Process Control Block (PCB)
+    * Operations on Processes
+    * Context Switching in Operating System
+* 2. Inter Process Communication (IPC)
+  * Shared Memory
+  * Message Passing
+#### Process Schedulers in Operation System (Left to do to add in notes here below)
 #### Preemptive and Non-Preemptive Scheduling
 * .----
 #### MY COMPLETE TOPIC WISE LEARNING ABOUT PROCESS MANAGEMENT (WITH TOPIC WISE DEEP LOW LEVEL LEARNING)
-* Youtube Found - Can refer this to understand in video :
-  * https://www.youtube.com/watch?v=OrM7nZcxXZU&list=PLBlnK6fEyqRgKl0MbI6kbI5ffNt7BF8Fn&ab_channel=NesoAcademy
+* Youtube Found - Can refer this to understand in video 
+* https://www.youtube.com/watch?v=OrM7nZcxXZU&list=PLBlnK6fEyqRgKl0MbI6kbI5ffNt7BF8Fn&ab_channel=NesoAcademy
 * Re-arranged according to actual learning techniques and flow (Bit mixed in GFG but topics are well explained)
 #####  Flow of Learning is Like this (For Deep Learning in YT follow - mentioned above) (Follow less of my notes added in OS repo)
 * 1. PROCESS MANAGEMENT INTRO
