@@ -78,7 +78,7 @@
 #### Real Time Operating System (RTOS)
 * .
 
-### 5. PROCESS MANAGEMENT
+### 5. PROCESS MANAGEMENT (RE-UPDATED INDEX BY MY LEARNING)
 * 1. Introduction to Process Management
   * Pre-requisites Topics
     * Process and Threads
@@ -92,12 +92,26 @@
   * Preemptive and Non-Preemptive Scheduling
   * CPU Scheduling Criteria
   * Multilevel Queue Scheduling
-#### Multiple-Processor Scheduling in Operating System (TODO - Or leave)
-#### Thread Scheduling (TODO - Or leave)
-* .---.
+* 100. Leftover Topic 
+  * Multiple-Processor Scheduling in Operating System (TODO - Or leave)
+  * Thread Scheduling (TODO - Or leave)
+* 4. PROCESS SYNCHRONIZATION
+  * Introduction of Process Synchronization
+  * Race Condition Vulnerability
+  * Critical Section in Synchronization
+  * Mutual Exclusion in Synchronization
+  * CRITICAL SECTION PROBLEM SOLUTION 
+    * Person's Algorithm in Process Synchronization
+    * Semaphores in Process Synchronization
+    * Semaphores and its types
+    * Producer Consumer Problem using Semaprhores | Set 1
+    * Readers-Writers Problem | Set 1 (Introduction and Readers Preference Solution)
+    * Dining Philosophers Problem Using Semaphores
+    * Hardware Synchronization Algorithsm : Unlock and Lock, test and Set, Swap
+* .
+* .--MY LEARNING BELOW--.
 #### MY COMPLETE TOPIC WISE LEARNING ABOUT PROCESS MANAGEMENT (WITH TOPIC WISE DEEP LOW LEVEL LEARNING)
-* Youtube Found - Can refer this to understand in video 
-* https://www.youtube.com/watch?v=OrM7nZcxXZU&list=PLBlnK6fEyqRgKl0MbI6kbI5ffNt7BF8Fn&ab_channel=NesoAcademy
+* Youtube Found - Can refer this to understand in video  :  https://www.youtube.com/watch?v=OrM7nZcxXZU&list=PLBlnK6fEyqRgKl0MbI6kbI5ffNt7BF8Fn&ab_channel=NesoAcademy
 * Re-arranged according to actual learning techniques and flow (Bit mixed in GFG but topics are well explained)
 #####  Flow of Learning is Like this (For Deep Learning in YT follow - mentioned above) (Follow less of my notes added in OS repo)
 * 1. PROCESS MANAGEMENT INTRO
@@ -434,39 +448,22 @@
 #### Thread in Operating System
 #### Threads and its types in Operating System
 #### Multithreading in Operating System
-
-### 8. PROCESS SYNCHRONIZATION
-#### Introduction of Process Synchronization
-#### Race Condition Vulnerability
-#### Critical Section in Synchronization
-#### Mutual Exclusion in Synchronization
 * .
 
-### 9. CRITICAL SECTION PROBLEM SOLUTION
-#### Person's Algorithm in Process Synchronization
-#### Semaphores in Process Synchronization
-#### Semaphores and its types
-#### Producer Consumer Problem using Semaprhores | Set 1
-#### Readers-Writers Problem | Set 1 (Introduction and Readers Preference Solution)
-#### Dining Philosophers Problem Using Semaphores
-#### Hardware Synchronization Algorithsm : Unlock and Lock, test and Set, Swap
-* .
-
-### 10. DEADLOCKS AND DEADLOCK HANDLING METHODS
-#### Intorduction of Deadlock in Operatings System
+### 8-9-10. DEADLOCKS AND DEADLOCK HANDLING METHODS
+#### Introduction of Deadlock in Operating System
 #### Conditions for Deadlock in Operating System
 #### Banker's Algorithm in Operating System
 #### Wait for Graph Deadlock Detection in Distributed System
 #### Handling Deadlocks
 #### Deadlock Prevention and Avoidance
 #### Deadlock Detection and Recovery
-#### Deadock Ignorance in Operating System
+#### Deadlock Ignorance in Operating System
 #### Recovery from Deadlock in Operating System
 * .
 
 
-### 11. MEMORY MANAGEMENT (DONE LEARNING WITH PROPER TOPICS AND YT VIDEOS - KEEP ON REVISING IF NOT WANT TO GO THROUGH VIDEOS AGAIN)
-#### Memory Management in OS (HIGH LEVEL TOPIC DISTRIBUTION - GFG but enhanced by my own learning and re-ordered topics)
+### 11. MEMORY MANAGEMENT (GFG TOPIC INDEX - ENHANCED BY MY LEARNING)
 * 1. Implementation of Contiguous Memory Management Techniques
   * A. Fixed (or static) Partitioning
   * B. Variable (or Dynamic) Partitioning (Below are dynamic allocation technique for contiguous memory allocation)
@@ -490,8 +487,7 @@
     * Thrashing is when huge page replacement is taking place such that the system hangs out. Swapping is part of page replacement algorithm, but thrashing is like worst.
 * --
 #### MY COMPLETE TOPIC WISE LEARNING ABOUT MEMORY MANAGEMENT (WITH TOPIC WISE DEEP LOW LEVEL LEARNING)
-* Youtube Found - Can refer this to understand in video : 
-  * https://www.youtube.com/watch?v=RhNWpUrO5MQ&list=PL8tc66sMn9Kjt2Wf5H9O-TMqZFQukoCQ1&ab_channel=AnjaliSharma
+* Youtube playlist followed - Can refer this to understand in video :  https://www.youtube.com/watch?v=RhNWpUrO5MQ&list=PL8tc66sMn9Kjt2Wf5H9O-TMqZFQukoCQ1&ab_channel=AnjaliSharma
 * Re-arranged according to actual learning techniques and flow (Bit mixed in GFG but topics are well explained)
 #####  Flow of Learning is Like this (For Deep Learning in YT follow - mentioned above) (Follow less of my notes added in OS repo)
 * 1. MEMORY MANAGEMENT INTRO (Why we need) 
@@ -783,14 +779,15 @@
 ##### DISK MANAGEMENT IN OS
 * 1. DISK STRUCTURE 
   * Topics like Seek Time, Partition
-* 2. FCFS DISK SCHEDULING
-* 3. SSTF DISK SCHEDULING
-* 4. SCAN DISK SCHEDULING
-* 5. C-SCAN DISK SCHEDULING
-* 6. LOOK DISK SCHEDULING
-* 7. C-LOOK DISK SCHEDULING
-* 8. DISK SCHEDULING PRACTISE QUESTIONS
-* 9. RAID (REDUNDANT ARRAY OF INDEPENDENT DISKS)
+* 2. DISK SCHEDULING ALGORITHM IN OS
+  * 1. FCFS DISK SCHEDULING
+  * 2. SSTF DISK SCHEDULING
+  * 3. SCAN DISK SCHEDULING
+  * 4. C-SCAN DISK SCHEDULING
+  * 5. LOOK DISK SCHEDULING
+  * 6. C-LOOK DISK SCHEDULING
+  * 7. DISK SCHEDULING PRACTISE QUESTIONS
+* 3. RAID (REDUNDANT ARRAY OF INDEPENDENT DISKS)
   * Motive - If in case disk is corrupt, so for backup we need RAID technique for fault tolerance of our  program code. so that our code we can get back
   * LEVEL 0 to 6
   * LEVEL 0 - Only Stripping (dividing our program to separate disks plate)
@@ -801,10 +798,8 @@
   * LEVEL 5 - We won't have a separate disk as whole disk corrupt then whole backup goes  away. so we add each parity program code to separate disk which is being used by programs only. no separate disk for parity.
   * LEVEL 6 - Here we add parity code of each program in two separate disks which is used by programs only (and not alone) rather than in one.
   * More you can understand by watching the videos by watching.
-* 10. I/O Management
-
-
-
+* 4. I/O Management
+* .
 
 ### 13. OS INTERVIEW QUESTIONS / OS QUIZ AND GATE PYQ'S
 * .
