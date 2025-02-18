@@ -362,9 +362,71 @@
     * so like this it works.
     * see in notes pdf. for gantt chat and numerical understanding of each scheduling algorithm
 * --
-* 3. PROCESS SYNCHRONIZATION
-  * 
-    
+* 3. PROCESS SYNCHRONIZATION (CONCURRENCY AND SYNCHRONIZATION)
+  * As we know degree of multiprogramming depends on the RAM. Number of frames/process in RAM. So all this process are running simultaneously.
+  * So because of multiprogramming nature of our modern operating system, the concept of synchronization came into the view.
+  * On the basis of synchronization - Processes can be divided into two types
+    * COOPERATING PROCESS - Requires synchronization. When process is affected by the other process or affects the other process is called cooperating process.
+      * This effecting each other is possible only if there are shared variable. i.e. some variable x. (One process will be doing x-x+10, while other will be doing x=x-10).
+      * Sharing a data variables, file or table, then there is a need of synchronization
+      * This synchronization problem gave rise to an inconsistency in the system known as RACE CONDITION
+      * RACE CONDITION
+        * A situation where several processes access and manipulate the same data concurrently and the outcome of the execution depends on the particular order in which the access takes place. This is called RACE Condition.
+        * Let say we are using Round robin algorithm, And a process has three main code segment START SECTION, CRITICAL SECTION, and EXIT/END SECTION
+        * So when one process is in critical section, then other process must not be in critical section.
+        * It is very well explained in the YT, Check there only
+        * In round-robin, it can be that value of global variable will get updated by another process. so it gives rise to inconsistency-
+        * So in cooperating process if the process are manipulating the shared data then it will give rise to inconsistency and hence race condition occurs
+      * CONCLUSION
+        * The order of execution matter the most in concurrent processes.
+        * Moreover, they are been executed in time-shared environment, where the OS Context switches the processes as and when necessary.
+        * As they share resources (mostly files and variables), there result can have inconsistency.
+        * And this problem of inconsistency is known as Race Condition! (Understand this way - which process will race to change/update/modify the global variable)
+      * HOW TO GET RID OF RACE CONDITION
+        * CRITICAL SECTION - That portion of your program where shared resources are updated or modified.
+          * When a process is accessing shared modifiable data or a resource that can only operate on behalf of one process at a time, the process is said ot be in a critical section
+          * When one process is in a critical section, all other processes are excluded from their critical section when that same shared resources is shared between cooperating process,
+          * In critical section problem there are four General sections:
+            * 1, Entry section
+            * 2, Critical Section
+            * 3, Exit section
+            * 4, Remainder section
+          * Principle of Mutual Exclusion
+            * It states that not two processes may be simultaneously present in the critical section (ie. at the same time).
+            * Entry Section - At entry section only you have to ask for permission - It is treated as security check. It tells the status of CS whether it is availabe or not and ensures that only one processes enters the cs.
+            * Critical Section - Any shared resources on which lock is tag. It can be a data/item/register/files/variables etc.
+            * Exit Section - Intimate the waiting processes that CS has become empty or available for use.
+          * Solutions to Critical Section Problem (So the above four general sections should follow this criteria in the code)
+            * 1. Mutex (Mutual Exclusion) - In critical section only one process at a time.
+            * 2. Progress - Process which are in entry, critical or exit section, they will decide which process will go next in critical section. So that progress is on.
+            * 3. Bounded Waiting - A fair chance should be provided to all other process to access critical section. We don't want only one process to be in critical section.
+          * LOCK Variable - Example of Mutual Exclusion
+            * If Lock-1 (Neans resource CS is free) then the process will access the CS and set the Lock=® (so that no other process comes in CS when this current process is in CS). Once this process completes it's task in CS, then it goes in Exit section and re-update the Lock=1. so that other process can use this free CS now.
+            * If Lock=0 (Means resource CS is not free) - then go in waiting situation. Process is going in waiting situation.
+          * PETERSON'S ALGORITHM - SOLUTION FOR THE CRITICAL SECTION PROBLEM
+            * This is same like Dekker's son algorithm.
+            * flag[0]= true (Enter the CS )
+            * turn = 1
+            * This algorithm satisfies all the criteria - Mutual Exclusion, Bounded Waiting and Progress
+            * See in YT only. This is better to be understand by code only - You can directly learn this in Intervie time then also it will be fine.
+          * HARDWARE SOLUTION FOR THE CRITICAL SECTION PROBLEM (FOR MULTIPLE CPU)
+            * Dekker's and Peterson solution does not guaranteed to work on modern computer with multiple core. (more than one CPU) -
+            * Use hardware insturction that are provided by modern computer.
+            * There are two types of hardware instruction;
+              * TestAndSet() - Here we have global variable lock (value true or false). See more in YT only (Part 3 of Playslist)
+              * Swap() - Similar to TestAndSet. Here we have two words/variables. See more in YT only (Part 3 of Playlist)
+          * SEMAPHORES - SOLUTION FOR THE CRITICAL SECTION PROBLEM
+            * Designed by Dijkstra
+            * What gave rise to Semaphore - The critical section problem, multi-process env, process are constantly access shared resources, which gave rise to Race condition
+            * So, process must access the Shared resources in a mutual exclusive manner.
+            * So 05 must resolve this, os is software only, Software is progrms only, so we need good program/algo to resolve this issue and allow mutual exclusion.
+            * Semaphores helps in attaining mutual exclusion
+            * Semaphore is just a variable, (Integer Variable),
+            * Uses of semaphore - (See in yt also)
+              * 1, MUTEX - Provides Mutual Exclusion
+              * 2. NOTIFIER - Notifies events to processes
+              * 3. COUNTER - Tracks processes or resources
+
 * --- < END > ------
 
 
@@ -746,6 +808,11 @@
 
 ### 13. OS INTERVIEW QUESTIONS / OS QUIZ AND GATE PYQ'S
 * .
+
+
+
+
+
 
 
 
